@@ -1,0 +1,71 @@
+<!--<div class="container">
+<h2>Réservez une démo</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Nom</mat-label>
+    <input matInput formControlName="name" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Téléphone</mat-label>
+    <input matInput class="inp" type="tel" formControlName="phone" required>
+  </mat-form-field>
+
+ 
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Date de démo</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="date" required>-->
+    
+    <!-- L’icône de calendrier -->
+   <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  
+
+  <div class="buttons">
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Envoyer</button>
+    <button mat-button type="button" (click)="close()">Fermer</button>
+  </div>
+</form>
+</div>-->
+<div class="popup-container">
+    <div class="container">
+      <h2>Réservez une démo</h2>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  
+        <div class="form-group">
+          <label>Nom :</label>
+          <input type="text" formControlName="name" placeholder="Votre nom" required />
+        </div>
+  
+        <div class="form-group">
+          <label>Email :</label>
+          <input type="email" formControlName="email" placeholder="Votre email" required />
+        </div>
+  
+        <div class="form-group">
+          <label>Téléphone :</label>
+          <input type="tel" formControlName="phone" placeholder="Votre téléphone" required />
+        </div>
+  
+        <div class="form-group">
+          <label>Date de démo :</label>
+          <input [matDatepicker]="picker" matInput formControlName="date" placeholder="Choisissez une date" required />
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </div>
+  
+        <div class="form-group">
+          <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Envoyer</button>
+          <button  type="button" (click)="close()">Fermer</button>
+        </div>
+  
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,70 @@
+.popup-container {
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    background: #f6f6f6;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 800px;
+    height:900px;
+    max-width: 90%;
+    background-image: url("/assets/mes images/background.svg");
+
+  }
+  
+  .container {
+    /*background-color: #11262f;*/
+    /*background-image: url("/assets/mes images/background.svg");*/
+    padding: 20px;
+    border-radius: 10px;
+    width: 450px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.3);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    /*color: rgba(244, 244, 244, 0.3);*/
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: white;
+
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #cfd3d5;
+    color: rgb(0, 0, 0);
+    outline: none;
+}
+
+textarea {
+    height: 80px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #08D1C7;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #06b3ac;
+}

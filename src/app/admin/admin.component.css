@@ -1,0 +1,99 @@
+/* Style général du tableau */
+.demande {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    
+
+    width: 1440px;
+    }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style des en-têtes */
+  th {
+    background: #007BFF;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+  }
+  
+  /* Style des cellules */
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Alternance des couleurs des lignes */
+  tr:nth-child(even) {
+    background: #f9f9f9;
+  }
+  
+  /* Bouton de suppression */
+  button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 10px;
+  }
+  
+  button:hover {
+    background: #c82333;
+  }
+
+  .btnping{
+    background: #35dc83;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 120px;
+  }
+  
+  /* Style du conteneur */
+  .container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  /* Titre */
+  h2 {
+    text-align: center;
+    color: #fff;
+    background: #007BFF;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  span{
+color: white;
+  }
+  
+  .reservation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    
+
+    width: 1440px;
+  }

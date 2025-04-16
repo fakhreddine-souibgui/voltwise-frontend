@@ -1,0 +1,159 @@
+{
+    "NAVBAR": {
+      "HOME": "Home",
+      "ABOUT": "About",
+      "SOLUTIONS": "Our Solutions",
+      "FAQ": "FAQ",
+      "CONTACT": "Contact",
+      "LOGIN": "Login"
+    },
+    "HERO": {
+      "TITLE": "EMBRACE THE FUTURE AUTOMATE YOUR SERVICES",
+      "DESCRIPTION": "Voltwise Solutions offers specialized intelligent charging solutions for businesses, public spaces, and professionals, facilitating acquisition, optimizing energy management, and providing a professional customer experience, all while valuing sustainability.",
+      "PROMO": "Switch to smart charging now!",
+      "REQUEST_QUOTE": "Request a Quote",
+      "BOOK_DEMO": "Discover Our Solutions"
+    }
+    ,
+    "SERVICES": {
+    "CUSTOMER_SERVICE": {
+      "TITLE": "Customer Service",
+      "DESCRIPTION": "24/7 customer support guiding you from needs assessment to post-installation follow-up."
+    },
+    "PERSONALIZATION": {
+      "TITLE": "Personalization",
+      "DESCRIPTION": "Ongoing monitoring and fast interventions to ensure the performance and reliability of our charging stations."
+    },
+    "MAINTENANCE": {
+      "TITLE": "Maintenance",
+      "DESCRIPTION": "Tailored solutions for your space (custom design) for a charging experience that fits perfectly into your environment."
+    },
+    "ADDED_VALUE": {
+      "TITLE": "Added Value",
+      "DESCRIPTION": "More than just charging — a smart solution that enhances comfort and accessibility."
+    }
+  },
+  "ABOUT": {
+    "TITLE": "About Us",
+    "DESCRIPTION": "VoltWise Solutions specializes in the design, development, and deployment of charging stations, focusing on the specific needs of businesses. We provide reliable solutions for public charging, offering a comprehensive service from design to integration, as well as dedicated support for our clients to ensure optimal service for their visitors.",
+    "MORE": "Learn More"
+  },
+  "SOLUTIONS": {
+    "TITLE": "Our Solutions",
+    "TECH_SHEET": "View Technical Sheet",
+    "REQUEST_QUOTE": "Request a Quote",
+    "PRODUCT_1": {
+      "TITLE": "Nano Box",
+      "TEXT": "The Nano Box is the perfect ultra-fast charger for cafes, restaurants, beach bars, and hotels. With Type-C and TIPSY cables, it charges all smartphones quickly and safely. Compact and elegant, it fits into your spaces, from counters to terraces. With our mobile app, manage your boxes in real time and offer a modern service that delights your customers."
+    },
+    "PRODUCT_2": {
+      "TITLE": "Multi boxes",
+      "TEXT": "The Multi-Boxes revolutionize charging in public spaces such as businesses, shopping centers, and public areas. Compatible with Type-C and Tinsy, they offer a fast and reliable charging experience for all devices. Ideal for airports, commercial centers, waiting rooms, sports facilities, and restaurants, they manage charging innovatively, ensuring performance and safety while providing an exceptional customer experience."
+    },
+    "PRODUCT_3": {
+      "TITLE": "Mega charger",
+      "TEXT": "The Mega Charger is the ultimate solution for events of all sizes. Capable of charging up to 7 devices simultaneously with Type-C and Tipsy cables, it offers universal compatibility. Its secure compartments protect devices, while its interactive screen enables intuitive navigation and dynamic advertising. Perfect for event organizers looking to provide premium charging services to attendees."
+    }
+  },
+  "VALUES": {
+    "TITLE": "Our Values",
+    "INNOVATION": "Innovation",
+    "INNOVATION_TEXT": "At Voltwise Solutions, innovation drives everything we do.We craft smart, connected solutions that stay ahead of tomorrow’s needs, blending cutting-edge tech, intuitive design, and meaningful impact.",
+    "SHARING": "Sharing",
+    "SHARING_TEXT": "We help our clients enhance the experience of their visitors.Our connected solutions are designed to boost engagement, streamline journeys, and create on-site value.",
+    "TRANSPARENCY": "Transparency",
+    "TRANSPARENCY_TEXT": "Voltwise Solutions is committed to creating sustainable solutions that respect the environment while delivering exceptional performance.We integrate eco-friendly practices at every stage of development to help build a greener future."
+  },
+  "PARTNERS": {
+    "TITLE": "Our Partners"
+  },
+  "FAQ": {
+    "TITLE": "FAQ",
+    "QUESTION_1": "Why choose Voltwise Solutions?",
+    "ANSWER_1": [
+      "✔️ 1-year warranty on our charging stations",
+      "✔️ Fast and efficient maintenance",
+      "✔️ Full customization",
+      "✔️ Solutions tailored for small spaces and mobile use",
+      "✔️ Smart and energy-efficient charging stations",
+      "",
+      "🔗 Need more information? Contact us now!",
+      "📩 voltwisesolutions@gmail.com | 📞 +216 53 536 607"
+    ],
+    "QUESTION_2": "What types of devices can your charging stations support?",
+    "ANSWER_2": [
+      "Our Voltwise Solutions charging stations are compatible with most mobile electronic devices:",
+      "smartphones (iPhone, Android), tablets, smartwatches, wireless earbuds, and small USB devices (power banks, e-readers).",
+      "",
+      "Discover our range of charging station models (solutions link) to find the one that suits you.",
+      "",
+      "Contact us at voltwisesolutions@gmail.com or +216 53 536 607.",
+      "",
+      "Find the perfect charging station today!"
+    ],
+    "QUESTION_3": "Are your charging stations secure?",
+    "ANSWER_3": [
+      "Yes, Voltwise Solutions charging stations are equipped with protections against overvoltage, short circuits, and overheating.",
+      "For public spaces, they feature secure lockers with codes, ensuring the safety of smartphones and tablets.",
+      "",
+      "Learn more on our charging station safety page.",
+      "",
+      "Call us at +216 53 536 607 or email voltwisesolutions@gmail.com.",
+      "",
+      "Charge with peace of mind!"
+    ],
+    "QUESTION_4": "Can the stations be customized for my business?",
+    "ANSWER_4": [
+      "Absolutely! Our Voltwise Enterprise service offers:",
+      "",
+      "Physical customization:",
+      "Shells in your corporate colors (durable epoxy paint)",
+      "",
+      "Technical customization:",
+      "Port configuration tailored to your needs",
+      "Centralized management dashboard",
+      "",
+      "Request a personalized demo (demo link).",
+      "",
+      "Contact us at voltwisesolutions@gmail.com or +216 53 536 607 for a quote.",
+      "Boost your brand today!"
+    ],
+    "QUESTION_5": "What type of maintenance support do you offer?",
+    "ANSWER_5": [
+      "Voltwise Solutions provides 24/7 assistance, remote software updates, and on-site interventions.",
+      "We offer customized contracts that include inspections and repairs.",
+      "",
+      "Details on our maintenance service page.",
+      "",
+      "Contact us at +216 53 536 607 or voltwisesolutions@gmail.com.",
+      "",
+      "Keep your stations in top shape!"
+    ],
+    "QUESTION_6": "How can I buy or rent a charging station?",
+    "ANSWER_6": [
+      "Buying or renting a charging station with Voltwise Solutions is simple and fast!",
+      "",
+      "✅ Choose your model from our high-performance stations tailored to your needs (solutions link)",
+      "✅ Place your order and benefit from personalized support",
+      "✅ Receive your station and enjoy a turnkey service from installation to activation",
+      "",
+      "Need advice? Our experts are here to help at +216 53 536 607 or via email at voltwisesolutions@gmail.com.",
+      "",
+      "Order now!"
+    ],
+    "QUESTION_7": "How can you increase your revenue with Voltwise Solutions?",
+    "ANSWER_7": [
+      "With Voltwise Solutions, boost your income by investing in our Nano Boxes—compact, high-performance charging stations.",
+      "By purchasing them, you can operate them through a commission-based system in partnership with cafes, restaurants, leisure centers, and many other establishments.",
+      "",
+      "This solution helps you attract more customers, offer an innovative and convenient service, and generate additional revenue."
+    ],
+  "FOOTER": {
+    "CONTACTS": "Contacts",
+    "EMAIL": "Email",
+    "PHONE": "Phone",
+    "ADDRESS": "Address"
+  }
+}
+}
+  

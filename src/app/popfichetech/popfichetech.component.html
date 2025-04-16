@@ -1,0 +1,29 @@
+<!--<div class="popup-container">
+  <h2 class="popup-title">🎯 Fiche technique</h2>
+  <p class="popup-content">
+      Solution compacte et performante pour une recharge rapide et sécurisée des smartphones. Idéale pour les petits espaces et les déplacements.
+  </p>
+  <strong>Caractéristiques :</strong>
+  <ul>
+      <li>🔋 Technologie de recharge rapide avec câbles Type-C et Tipsy</li>
+      <li>📱 Connectivité avancée avec application mobile pour un suivi en temps réel</li>
+      <li>🔒 Sécurité optimisée grâce à une gestion intelligente de l’alimentation</li>
+      <li>🎛️ Expérience utilisateur fluide avec une interface intuitive</li>
+  </ul>
+  <div class="popup-actions">
+    <button mat-button mat-dialog-close class="close-button">❌ Fermer</button>
+</div>
+</div>-->
+<div class="popup-container">
+    <!--<h2 class="popup-title">{{ data.title }}</h2>
+    <p class="popup-content" [innerHTML]="data.fiche"></p>-->
+   <h2>{{ data.title }}</h2>
+   <img [src]="data.ficheImage" alt="Fiche technique" style="width: 100%; height: auto;">
+   
+    <div class="popup-actions">
+      <button (click)="closePopup()" class="close-button">❌ Fermer</button>
+    </div>
+  </div>
+  
+      
+  

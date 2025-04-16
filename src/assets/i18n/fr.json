@@ -1,0 +1,143 @@
+{
+    "NAVBAR": {
+      "HOME": "Accueil",
+      "ABOUT": "À propos",
+      "SOLUTIONS": "Nos solutions",
+      "FAQ": "FAQ",
+      "CONTACT": "Contact",
+      "LOGIN": "Se connecter"
+    },
+    "HERO": {
+      "TITLE": "EMBRACE THE FUTURE AUTOMATE YOUR SERVICES",
+      "DESCRIPTION": "Offrez à vos visiteurs une solution de recharge intelligente rapide et sécurisée grâce à Voltwise Solutions. Nos bornes connectées sont spécifiquement conçues pour faciliter le quotidien, optimiser la gestion énergétique de vos espaces publics et professionnels, tout en offrant une expérience client améliorée et valorisante.",
+      "PROMO": "Passez à la recharge intelligente dès maintenant!",
+      "REQUEST_QUOTE": "Demandez un devis",
+      "BOOK_DEMO": "Réservez une démo"
+    },
+    "SERVICES": {
+        "CUSTOMER_SERVICE": {
+          "TITLE": "Service Client",
+          "DESCRIPTION": "Service client 24/7 Accompagnement dans chaque étape de l'étude de vos besoins jusqu'au suivi après installation."
+        },
+        "PERSONALIZATION": {
+          "TITLE": "Personnalisation",
+          "DESCRIPTION": "Un suivi continu et des interventions rapides pour assurer la performance et la fiabilité de nos bornes."
+        },
+        "MAINTENANCE": {
+          "TITLE": "Maintenance",
+          "DESCRIPTION": "Des solutions adaptées à votre espace (Design personnalisé), pour une recharge qui s’intègre parfaitement à votre environnement."
+        },
+        "ADDED_VALUE": {
+          "TITLE": "Valeur ajoutée",
+          "DESCRIPTION": "Plus qu’une simple recharge, une solution intelligente qui améliore le confort et l’accessibilité."
+        }
+      },
+      "ABOUT": {
+    "TITLE": "À propos",
+    "DESCRIPTION": "Voltwise Solutions se spécialise dans la conception, le développement et le déploiement de bornes connectées, en mettant l'accent sur les entreprises accueillantes du public. Notre expertise couvre l’ensemble du processus, de l’analyse initiale à la phase de conception, en passant par un support dédié à nos clients pour l’intégration de services connectés destinés à leurs visiteurs.",
+    "MORE": "Voir plus"
+  },
+  
+  "SOLUTIONS": {
+    "TITLE": "Nos Solutions",
+    "TECH_SHEET": "Voir Fiche technique",
+    "REQUEST_QUOTE": "Demander un Devis",
+    "PRODUCT_1": {
+      "TITLE": "Nano Box",
+      "TEXT": "Le Nano Box est le chargeur ultra-rapide parfait pour les cafés, restaurants, beach bars et hôtels. Avec ses câbles Type-C et TIPSY, il recharge tous les smartphones rapidement et en toute sécurité. Compact et élégant, il s’intègre à vos espaces, du comptoir à la terrasse. Grâce à notre application mobile, gérez vos boxes en temps réel et offrez un service moderne qui ravira vos clients."
+    },
+    "PRODUCT_2": {
+      "TITLE": "Multi boxes",
+      "TEXT": "Le Multi Boxes révolutionne la recharge dans les espaces publics. Avec ses casiers sécurisés et son écran interactif, il garantit une recharge rapide et fiable pour tous les appareils. Compatible avec Type-C et Tipsy, il s’adapte à tous les besoins. Idéal pour les aéroports, gares ou centres commerciaux, le Multi Boxes allie performance, sécurité et innovation pour une expérience client exceptionnelle. Ses fonctionnalités avancées permettent une gestion facile et une intégration parfaite dans n’importe quel environnement."
+    },
+    "PRODUCT_3": {
+      "TITLE": "Mega charger",
+      "TEXT": "Le Mega Charger est la solution ultime pour les événements de toutes tailles. Capable de charger jusqu’à 7 appareils simultanément avec ses câbles Type-C et Tipsy, il offre une compatibilité universelle. Ses caissons sécurisés protègent vos appareils, tandis que son écran interactif permet une navigation intuitive et l’affichage de publicités dynamiques. Parfait pour les organisateurs d’événements qui souhaitent offrir un service de recharge premium à leurs participants."
+    }
+  },
+  "VALUES": {
+    "TITLE": "Nos Valeurs",
+    "INNOVATION": "Innovation",
+    "INNOVATION_TEXT": "Chez Voltwise Solutions, l’innovation est au cœur de tout.Nous concevons des solutions connectées qui anticipent les usages de demain, alliant technologie, simplicité et impact réel.",
+    "SHARING": "Partage",
+    "SHARING_TEXT": "Nous aidons nos clients à enrichir l’expérience de leurs visiteurs.Nos solutions connectées sont conçues pour renforcer l’engagement, fluidifier les parcours et créer de la valeur sur site.",
+    "TRANSPARENCY": "Transparence",
+    "TRANSPARENCY_TEXT": "Voltwise s'engage à créer des solutions durables qui respectent l'environnement, tout en offrant des performances exceptionnelles.Nous intégrons des pratiques éco-responsables à chaque étape du développement, pour un avenir plus vert."
+  },
+  "PARTNERS": {
+    "TITLE": "Nos Partenaires"
+  },
+  "FAQ": {
+    "TITLE": "FAQ",
+    "QUESTION_1": "Pourquoi choisir Voltwise Solutions ?",
+    "ANSWER_1": [
+      "✔️ Garantie 1 an sur nos bornes",
+      "✔️ Maintenance rapide et efficace",
+      "✔️ Personnalisation complète",
+      "✔️ Solutions adaptées aux espaces réduits et usage mobile",
+      "✔️ Borne intelligente et économique en énergie",
+      "🔗 Besoin de plus d’informations ? Contactez-nous maintenant !",
+      "📩 voltwisesolutions@gmail.com | 📞 +216 53 536 607"
+    ],
+    "QUESTION_2": "Quels types d'appareils vos bornes de recharge peuvent-elles prendre en charge ?",
+    "ANSWER_2": [
+      "Nos bornes Voltwise Solutions sont compatibles avec la plupart des appareils électroniques mobiles : smartphones (iPhone, Android), tablettes, montres connectées, écouteurs sans fil, et petits appareils USB (power bank, liseuses).",
+      "Découvrez nos modèles de bornes (lien solution) pour choisir la vôtre.",
+      "Contactez-nous à voltwisesolutions@gmail.com ou au +216 53 536 607",
+      "Trouvez la borne idéale dès maintenant !"
+    ],
+    "QUESTION_3": "Vos bornes de recharge sont-elles sécurisées ?",
+    "ANSWER_3": [
+      "Oui, nos bornes Voltwise Solutions intègrent des protections contre les surtensions, courts-circuits et surchauffes.",
+      "Pour les lieux publics, elles proposent des casiers sécurisés avec codes, garantissant la sécurité des smartphones et tablettes.",
+      "Plus d'infos sur notre page sécurité des bornes.",
+      "Appelez-nous au +216 53 536 607 ou écrivez à voltwisesolutions@gmail.com.",
+      "Rechargez en toute sérénité !"
+    ],
+    "QUESTION_4": "Les stations peuvent-elles être personnalisées pour mon entreprise ?",
+    "ANSWER_4": [
+      "Absolument ! Notre service Voltwise Enterprise propose :",
+      "Personnalisation physique : coques aux couleurs corporate (peinture epoxy résistante)",
+      "Adaptation technique : configuration des ports par service",
+      "Dashboard de gestion centralisée",
+      "Demander une démo personnalisée (lien vers démo)",
+      "Contactez-nous à voltwisesolutions@gmail.com ou au +216 53 536 607 pour un devis.",
+      "Boostez votre marque dès aujourd'hui !"
+    ],
+    "QUESTION_5": "Quel type de support de maintenance proposez-vous ?",
+    "ANSWER_5": [
+      "Voltwise Solutions propose une assistance 24h/24 et 7j/7.",
+      "Des mises à jour logicielles à distance et des interventions sur site.",
+      "Contrats personnalisés avec inspections et réparations incluses.",
+      "Détails sur notre service de maintenance.",
+      "Contactez-nous au +216 53 536 607 ou à voltwisesolutions@gmail.com.",
+      "Maintenez vos bornes au top !"
+    ],
+    "QUESTION_6": "Comment puis-je acheter ou louer une borne de recharge ?",
+    "ANSWER_6": [
+      "Acheter ou louer une borne de recharge avec Voltwise Solutions, c’est simple et rapide !",
+      "✅ Choisissez votre modèle parmi nos bornes performantes et adaptées à vos besoins (lien de solution)",
+      "✅ Passez commande et bénéficiez d’un accompagnement personnalisé",
+      "✅ Recevez votre borne et profitez d’un service clé en main de l’installation à la mise en service",
+      "Besoin de conseils ? Nos experts sont à votre écoute au +216 53 536 607 ou par email à voltwisesolutions@gmail.com.",
+      "Passez commande dès maintenant !"
+    ],
+    "QUESTION_7": "Comment augmenter vos revenus avec Voltwise Solutions ?",
+    "ANSWER_7": [
+      "Avec Voltwise Solutions, boostez vos revenus en investissant dans nos Nano Boxes, des bornes de recharge compactes et performantes.",
+      "En les achetant, vous pouvez les exploiter via un système de commission en partenariat avec des cafés, restaurants, centres de loisirs et bien d’autres établissements.",
+      "Grâce à cette solution, vous attirez plus de clients, offrez un service innovant et pratique, tout en générant des revenus supplémentaires.",
+      "Passez à l’action dès maintenant !"
+    ]
+  }
+,
+  "FOOTER": {
+    "CONTACTS": "Contacts",
+    "EMAIL": "Email",
+    "PHONE": "Tél",
+    "ADDRESS": "Adresse"
+  }
+
+
+  }
+  

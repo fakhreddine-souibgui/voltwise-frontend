@@ -1,0 +1,102 @@
+  <section class="demande">
+  <div class="container">
+    <h2>Tableau des Demandes de Devis</h2>
+    
+    <input [(ngModel)]="searchTel" placeholder="Rechercher par téléphone">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Email</th>
+          <th>Nom d'Entreprise</th>
+          <th>Fonction</th>
+          <th>Téléphone</th>
+          <th>Gouvernorat</th>
+          <th>Message</th>
+          <th>Statut</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let demande of demandes | filterPhone:searchTel"> 
+          <td>{{ demande.id }}</td>
+          <td>{{ demande.nom }}</td>
+          <td>{{ demande.email }}</td>
+          <td>{{ demande.nomentreprise }}</td>
+          <td>{{ demande.fonction }}</td>
+          <td>{{ demande.tel }}</td>
+          <td>{{ demande.Gouvernorat }}</td>
+          <td>{{ demande.message }}</td>
+          <td>{{ demande.statut }}</td>
+          <td>
+            <button mat-button (click)="deleteDemande(demande.id)">Supprimer</button>
+            <button mat-button (click)="editDemande(demande)">Modifier</button> <!-- Ajouter un bouton Modifier -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Boutons de navigation -->
+<div>
+    <button (click)="prevPage()" [disabled]="currentPage === 1" class="btnping">⬅ Précédent</button>
+    <span>Page {{ currentPage }}</span>
+    <button (click)="nextPage()" class="btnping">Suivant ➡</button>
+  </div>
+  
+    <!-- Formulaire pour modifier la demande -->
+    <div *ngIf="selectedDemande" class="edit-form">
+      <h3>Modifier la demande</h3>
+      <form (ngSubmit)="saveChanges()">
+        <label for="nom">Nom:</label>
+        <input id="nom" [(ngModel)]="selectedDemande.nom" name="nom" required>
+        
+        <label for="email">Email:</label>
+        <input id="email" [(ngModel)]="selectedDemande.email" name="email" required>
+        
+        <label for="nomentreprise">Nom d'Entreprise:</label>
+        <input id="nomentreprise" [(ngModel)]="selectedDemande.nomentreprise" name="nomentreprise" required>
+        
+        <label for="fonction">Fonction:</label>
+        <input id="fonction" [(ngModel)]="selectedDemande.fonction" name="fonction" required>
+        
+        <label for="tel">Téléphone:</label>
+        <input id="tel" [(ngModel)]="selectedDemande.tel" name="tel" required>
+        
+        <label for="gouvernorat">Gouvernorat:</label>
+        <input id="gouvernorat" [(ngModel)]="selectedDemande.gouvernorat" name="gouvernorat" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" [(ngModel)]="selectedDemande.message" name="message" required></textarea>
+        
+        <button mat-button type="submit">Enregistrer</button>
+      </form>
+    </div>
+  </div>
+</section>
+<!--reservation un demo-->
+<!-- Tableau des Réservations -->
+ <section class="reservation">
+<h2>Tableau des Réservations</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Email</th>
+      <th>Téléphone</th>
+      <th>Date de Démo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reservation of reservations">
+      <td>{{ reservation.id }}</td>
+      <td>{{ reservation.name }}</td>
+      <td>{{ reservation.email }}</td>
+      <td>{{ reservation.phone }}</td>
+      <td>{{ reservation.demo_date | date: 'dd/MM/yyyy' }}</td>
+    </tr>
+  </tbody>
+</table>
+</section>
+  
+  

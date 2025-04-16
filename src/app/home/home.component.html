@@ -1,0 +1,597 @@
+<!--<div class="background-effects">
+  <div class="blur-effect ellipse-4"></div>
+  <div class="blur-effect ellipse-3"></div>
+</div> -->
+ <!-- Navbar -->
+ <!--<header>
+    <nav class="navbar">
+    <div class="logo">
+     <img src="assets/mes images/logo.png" alt="discription">
+   </div>
+    <div class="nav-right">
+  <ul class="nav-list">
+     <li><a (click)="onNavClick('hero')">Accueil</a></li>
+     <li><a (click)="onNavClick('about-container')">À propos</a></li>
+     <li><a (click)="onNavClick('recent-products')">Nos solutions</a></li>
+     <li><a (click)="onNavClick('faq-section')">FAQ</a></li>
+     <li><a (click)="onNavClick('contact')">Contact</a></li>
+ </ul>
+ <button class="nav-btn">Se connecter</button>
+</div>
+</nav>
+</header>-->
+<!-- Section Hero -->
+<!--<section id="hero"  class="hero">
+ <div class="hero-content">
+     <h1>EMBRACE THE FUTURE  AUTOMATE YOUR SERVICES</h1>
+     <p>
+         Offrez à vos visiteurs une solution de recharge intelligente rapide et sécurisée grâce à <br>Voltwise Solutions.<br>
+         Nos bornes connectées sont spécifiquement conçues pour faciliter le quotidien, optimiser la<br> gestion énergétique 
+         de vos espaces publics et professionnels, tout en offrant une <br>expérience client améliorée et valorisante.
+     </p>
+     <p class="highlight"><strong>Passez à la recharge intelligente dès maintenant !</strong></p>
+     <div class="buttons">
+         <button class="btn" (click)="openDialogformulaire()">Demander Un Devis</button>
+         <button class="btn quote" (click)="openDialogdemo()">Réservez une Démo</button>
+     </div>
+    
+ </div>
+ <div class="hero-image">
+   <img src="assets/mes images/battery.png" alt="discription">
+ </div>
+</section>-->
+<div class="background-effects">
+  <div class="blur-effect ellipse-4"></div>
+  <div class="blur-effect ellipse-3"></div>
+</div> 
+<!-- Navbar -->
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/mes images/logo.png" alt="description">
+    </div>
+    <div class="nav-right">
+      <ul class="nav-list">
+        <li><a (click)="onNavClick('hero')">{{ 'NAVBAR.HOME' | translate }}</a></li>
+        <li><a (click)="onNavClick('about-container')">{{ 'NAVBAR.ABOUT' | translate }}</a></li>
+        <li><a (click)="onNavClick('recent-products')">{{ 'NAVBAR.SOLUTIONS' | translate }}</a></li>
+        <li><a (click)="onNavClick('faq-section')">{{ 'NAVBAR.FAQ' | translate }}</a></li>
+        <li><a (click)="onNavClick('contact')">{{ 'NAVBAR.CONTACT' | translate }}</a></li>
+      </ul>
+      <div class="language-switch">
+        <button class="btnfr" (click)="switchLang('fr')">🇫🇷</button>
+        <button class="btnfen" (click)="switchLang('en')">🇺🇸</button>
+      </div>
+      <button class="nav-btn">{{ 'NAVBAR.LOGIN' | translate }}</button>
+    </div>
+  </nav>
+</header>
+
+<!-- Section Hero -->
+<section id="hero" class="hero">
+  <div class="hero-content">
+    <h1>{{ 'HERO.TITLE' | translate }}</h1>
+    <p>
+      {{ 'HERO.DESCRIPTION' | translate }}
+    </p>
+    <p class="highlight"><strong>{{ 'HERO.PROMO' | translate }}</strong></p>
+    <div class="buttons">
+      <button class="btn" (click)="openDialogformulaire()">{{ 'HERO.REQUEST_QUOTE' | translate }}</button>
+      <button class="btn quote" (click)="openDialogdemo()">{{ 'HERO.BOOK_DEMO' | translate }}</button>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="assets/mes images/battery.png" alt="discription">
+  </div>
+</section>
+
+<!-- Langue Switch Buttons -->
+<!--<div class="language-switch">
+    <button (click)="switchLang('fr')">🇫🇷 Français</button>
+    <button (click)="switchLang('en')">🇬🇧 English</button>
+  </div>-->
+
+<!-- Services -->
+<!--<section id="services" class="services">
+ <div class="service-card">
+     <div class="service-card-inner">
+         <div class="service-card-front">
+             <div class="title-container">
+                 <img src="assets/mes images/service-client.svg" alt="Service Client">
+                 <h3>Service Client</h3>
+             </div>
+         </div>
+         <div class="service-card-back">
+             <p>Service client 24/7 Accompagnement dans chaque étape de l'étude de vos besoins jusqu'au suivi après installation.</p>
+         </div>
+     </div>
+ </div>
+
+ <div class="service-card">
+     <div class="service-card-inner">
+         <div class="service-card-front">
+             <div class="title-container">
+                 <img src="assets/mes images/personalisation.svg" alt="Personnalisation">
+                 <h3>Personnalisation</h3>
+             </div>
+         </div>
+         <div class="service-card-back">
+             <p>Un suivi continu et des interventions rapides pour assurer la performance et la fiabilité de nos bornes..</p>
+         </div>
+     </div>
+ </div>
+
+ <div class="service-card">
+     <div class="service-card-inner">
+         <div class="service-card-front">
+             <div class="title-container">
+                 <img src="assets/mes images/maintenance.svg" alt="Maintenance">
+                 <h3>Maintenance</h3>
+             </div>
+         </div>
+         <div class="service-card-back">
+             <p>Des solutions adaptées à votre espace (Design personnalisé),  pour une recharge qui s’intègre parfaitement à votre environnement.</p>
+         </div>
+     </div>
+ </div>
+
+ <div class="service-card">
+     <div class="service-card-inner">
+         <div class="service-card-front">
+             <div class="title-container">
+                 <img src="assets/mes images/value.svg" alt="Valeur ajoutée">
+                 <h3>Valeur ajoutée</h3>
+             </div>
+         </div>
+         <div class="service-card-back">
+             <p>Plus qu’une simple recharge, une solution intelligente qui améliore le confort et l’accessibilité.</p>
+         </div>
+     </div>
+ </div>
+</section>-->
+<!-- Services -->
+<section id="services" class="services">
+    <div class="service-card">
+      <div class="service-card-inner">
+        <div class="service-card-front">
+          <div class="title-container">
+            <img src="assets/mes images/service-client.svg" alt="Service Client">
+            <h3>{{ 'SERVICES.CUSTOMER_SERVICE.TITLE' | translate }}</h3>
+          </div>
+        </div>
+        <div class="service-card-back">
+          <p>{{ 'SERVICES.CUSTOMER_SERVICE.DESCRIPTION' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="service-card">
+      <div class="service-card-inner">
+        <div class="service-card-front">
+          <div class="title-container">
+            <img src="assets/mes images/personalisation.svg" alt="Personnalisation">
+            <h3>{{ 'SERVICES.PERSONALIZATION.TITLE' | translate }}</h3>
+          </div>
+        </div>
+        <div class="service-card-back">
+          <p>{{ 'SERVICES.PERSONALIZATION.DESCRIPTION' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="service-card">
+      <div class="service-card-inner">
+        <div class="service-card-front">
+          <div class="title-container">
+            <img src="assets/mes images/maintenance.svg" alt="Maintenance">
+            <h3>{{ 'SERVICES.MAINTENANCE.TITLE' | translate }}</h3>
+          </div>
+        </div>
+        <div class="service-card-back">
+          <p>{{ 'SERVICES.MAINTENANCE.DESCRIPTION' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="service-card">
+      <div class="service-card-inner">
+        <div class="service-card-front">
+          <div class="title-container">
+            <img src="assets/mes images/value.svg" alt="Valeur ajoutée">
+            <h3>{{ 'SERVICES.ADDED_VALUE.TITLE' | translate }}</h3>
+          </div>
+        </div>
+        <div class="service-card-back">
+          <p>{{ 'SERVICES.ADDED_VALUE.DESCRIPTION' | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+<!-- À propos -->
+<!--<section id="about-container" class="about-container">
+ <h2 class="about-title">À propos</h2>
+ <div class="about-card">
+     <p class="about-text">
+         Voltwise Solutions se spécialise dans la conception, le développement et le déploiement de bornes connectées, 
+         en mettant l'accent sur les entreprises accueillantes du public. Notre expertise couvre l’ensemble du processus, 
+         de l’analyse initiale à la phase de conception, en passant par un support dédié à nos clients pour l’intégration 
+         de services connectés destinés à leurs visiteurs.
+     </p>
+     <button class="btn">Voir plus</button>
+ </div>
+</section>-->
+<!-- À propos -->
+<section id="about-container" class="about-container">
+    <h2 class="about-title">{{ 'ABOUT.TITLE' | translate }}</h2>
+    <div class="about-card">
+      <p class="about-text">
+        {{ 'ABOUT.DESCRIPTION' | translate }}
+      </p>
+      <button class="btn">{{ 'ABOUT.MORE' | translate }}</button>
+    </div>
+  </section>
+  
+
+<!-- Solutions -->
+<!--<section id="recent-products" class="recent-products">
+ <div class="centered-text">
+   <h2>Nos Solutions</h2>
+ </div>
+ <div class="service1">
+   <div class="product-container">
+     <div class="product-image">
+       <img [src]="products[currentProductIndex].image" alt="Produit">
+     </div>
+     <button class="arrow right" (click)="nextProduct()">&#10095;</button>
+   </div>
+   <div class="product-description">
+     <h1>{{ products[currentProductIndex].title }}</h1>
+     <p>{{ products[currentProductIndex].text }}</p>
+     <div class="product-buttons">
+       <button class="btn" (click)="openPopup()">Voir Fiche technique</button>
+       <button class="btn primary" (click)="openDialogformulaire()">Demander un Devis</button>
+
+     </div>
+   </div>
+ </div>
+</section>-->
+<!-- Solutions -->
+<section id="recent-products" class="recent-products">
+    <div class="centered-text">
+      <h2>{{ 'SOLUTIONS.TITLE' | translate }}</h2>
+    </div>
+    <div class="service1">
+      <div class="product-container">
+        <div class="product-image">
+          <img [src]="products[currentProductIndex].image" alt="Produit">
+        </div>
+        <button class="arrow right" (click)="nextProduct()"><img src="assets/mes images/flechedroit.png" alt="Suivant" class="arrow-img"></button>
+      </div>
+      <div class="product-description">
+        <h1>{{ products[currentProductIndex].title | translate }}</h1>
+        <p>{{ products[currentProductIndex].text | translate }}</p>
+        <div class="product-buttons">
+          <button class="btn" (click)="openPopup()">{{ 'SOLUTIONS.TECH_SHEET' | translate }}</button>
+          <button class="btn primary" (click)="openDialogformulaire()">{{ 'SOLUTIONS.REQUEST_QUOTE' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+<!-- Valeurs -->
+<!--<section id="values" class="values">
+ <h2>Nos Valeurs</h2>
+ <div class="values-container">
+     <div class="card">
+         <div class="card-inner">
+             <div class="card-front">
+                 <img src="assets/mes images/Innovation.svg" alt="Innovation">
+                 <h3>Innovation</h3>
+             </div>
+             <div class="card-back">
+                 <p>Des solutions de recharge modernes, rapides, sécurisées et intelligentes pour s’adapter à votre quotidien.</p>
+             </div>
+         </div>
+     </div>
+     
+     <div class="card">
+         <div class="card-inner">
+             <div class="card-front">
+                 <img src="assets/mes images/Partage.svg" alt="Partage">
+                 <h3>Partage</h3>
+             </div>
+             <div class="card-back">
+                 <p> L’énergie doit être accessible à tous, partout. 
+                     Nos bornes connectent les personnes et facilitent la vie</p>
+             </div>
+         </div>
+     </div>
+     <div class="card">
+         <div class="card-inner">
+             <div class="card-front">
+                 <img src="assets/mes images/Transparence.svg" alt="Transparence">
+                 <h3>Transparence</h3>
+             </div>
+             <div class="card-back">
+                 <p>Un service fiable, sans surprise, conçu pour offrir une recharge simple efficace et responsable</p>
+             </div>
+         </div>
+     </div>
+ </div>
+</section>-->
+<!-- Valeurs -->
+<section id="values" class="values">
+    <h2>{{ 'VALUES.TITLE' | translate }}</h2>
+    <div class="values-container">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="assets/mes images/Innovation.svg" alt="{{ 'VALUES.INNOVATION' | translate }}">
+            <h3>{{ 'VALUES.INNOVATION' | translate }}</h3>
+          </div>
+          <div class="card-back">
+            <p>{{ 'VALUES.INNOVATION_TEXT' | translate }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="assets/mes images/Partage.svg" alt="{{ 'VALUES.SHARING' | translate }}">
+            <h3>{{ 'VALUES.SHARING' | translate }}</h3>
+          </div>
+          <div class="card-back">
+            <p>{{ 'VALUES.SHARING_TEXT' | translate }}</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="assets/mes images/Transparence.svg" alt="{{ 'VALUES.TRANSPARENCY' | translate }}">
+            <h3>{{ 'VALUES.TRANSPARENCY' | translate }}</h3>
+          </div>
+          <div class="card-back">
+            <p>{{ 'VALUES.TRANSPARENCY_TEXT' | translate }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!--nos patenaires-->
+<section id="trusted-section" class="trusted-section">
+ <!--<h2>Nos partenaires</h2>-->
+ <h2>{{ 'PARTNERS.TITLE' | translate }}</h2>
+ <div class="carousel">
+     <div class="carousel-track">
+         <img src="assets/mes images/tunisian.png" alt="Marriott Tunis" class="logoo">
+         <img src="assets/mes images/insat.png" alt="California Gym" class="logoo">
+         <img src="assets/mes images/tunisian.png" alt="Marriott Tunis" class="logoo">
+         <img src="assets/mes images/insat.png" alt="California Gym" class="logoo">
+     </div>
+ </div>
+</section>
+<!--faq-->
+<!--<section id="faq-section" class="faq-section">
+ <h2 class="faq-title">FAQ</h2>
+ <div class="faq-container">
+     <div class="faq-item">
+         <button class="faq-question"><span class="question-indicator"></span>&nbsp;Quels types d’appareils vos bornes de recharge peuvent-elles prendre en charge ?</button>
+         <div class="faq-answer" >Nos bornes Voltwise Solutions sont compatibles avec la plupart des appareils électroniques mobiles : smartphones (iPhone, Android), tablettes, montres connectées, écouteurs sans fil, et petits appareils USB (power bank, liseuses).  
+
+            Découvrez nos modèles de bornes (lien solution ) pour choisir la vôtre.  
+            
+            Contactez-nous à voltwisesolutions&#64;gmail.com ou au +216 54479625 
+            
+            Trouvez la borne idéale dès maintenant !</div>
+     </div>
+     <div class="faq-item">
+         <button class="faq-question"><span class="question-indicator"></span>&nbsp;Vos bornes de recharge sont-elles sécurisées ?</button>
+         <div class="faq-answer">Oui, nos bornes Voltwise Solutions intègrent des protections contre les surtensions, courts-circuits et surchauffes. Pour les lieux publics, elles proposent des casiers sécurisés avec codes , garantissant la sécurité des smartphones et tablettes.  
+
+            Plus d'infos sur notre page sécurité des bornes .  
+            
+            Appelez-nous au +216 54479625 ou écrivez à voltwisesolutions&#64;gmail.com .  
+            
+            Rechargez en toute sérénité !</div>
+     </div>
+     <div class="faq-item">
+         <button class="faq-question"><span class="question-indicator"></span>&nbsp;Les stations peuvent-elles être personnalisées pour mon entreprise ?</button>
+         <div class="faq-answer">Absolument ! Notre service Voltwise Enterprise propose : 
+
+            Personnalisation physique  
+            
+            Coques aux couleurs corporate (peinture epoxy résistante)  
+            
+            Adaptation technique :  
+            
+            Configuration des ports par service  
+            
+            Dashboard de gestion centralisée 
+            
+             Demander une démo personnalisée ( lien vers démo ) 
+            
+            Contactez-nous à voltwisesolutions&#64;gmail.com ou au +216 54479625 pour un devis. Boostez votre marque dès aujourd'hui !</div>
+     </div>
+     <div class="faq-item">
+         <button class="faq-question"><span class="question-indicator"></span>&nbsp;Quel type de support de maintenance proposez-vous ?</button>
+         <div class="faq-answer">Voltwise Solutions propose une assistance 24h/24 et 7j/7, des mises à jour logicielles à distance et des interventions sur site. Contrats personnalisés avec inspections et réparations incluses.  
+
+            Détails sur notre service de maintenance .  
+            
+            Contactez-nous au +216 54479625 ou à voltwisesolutions&#64;gmail.com .  
+            
+            Maintenez vos bornes au top !</div>
+     </div>
+     <div class="faq-item">
+         <button class="faq-question"><span class="question-indicator"></span>&nbsp;Comment puis-je acheter ou louer une borne de recharge ?</button>
+         <div class="faq-answer">Acheter ou louer une borne de recharge avec Voltwise Solutions, c’est simple et rapide ! 
+           <br>✅ Choisissez votre modèle  parmi nos bornes performantes et adaptées à vos besoins  ( lien de solution )  
+           <br>✅ Passez commande et bénéficiez d’un accompagnement personnalisé  
+           <br>✅ Recevez votre borne et profitez d’un service clé en main de l’installation à la mise en service 
+           
+           Besoin de conseils ? Nos experts sont à votre écoute au +216 54479625. ou par email à voltwisesolutions&#64;gmail.com. 
+           
+           Passez commande dès maintenant !</div>
+     </div>
+     <div class="faq-item">
+         <button class="faq-question"><span class="question-indicator"></span>&nbsp;Vos bornes de recharge sont-elles économes en énergie ?</button>
+         <div class="faq-answer">Avec Voltwise Solutions, boostez vos revenus en investissant dans nos Nano Boxes, des bornes de recharge compactes et performantes. En les achetant, vous pouvez les exploiter via un système de commission en partenariat avec des cafés, restaurants, centres de loisirs et bien d’autres établissements. 
+
+            Grâce à cette solution, vous attirez plus de clients, offrez un service innovant et pratique, tout en générant des revenus supplémentaires. 
+            
+            Passez à l’action dès maintenant ! </div>
+     </div>
+ </div>
+</section>-->
+<!-- FAQ -->
+<section id="faq-section" class="faq-section">
+    <h2 class="faq-title">{{ 'FAQ.TITLE' | translate }}</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question"><span class="question-indicator"></span>&nbsp;{{ 'FAQ.QUESTION_1' | translate }}</button>
+        <div class="faq-answer">
+            <ul>
+              <li *ngFor="let line of 'FAQ.ANSWER_1' | translate">{{ line }}</li>
+            </ul></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span class="question-indicator"></span>&nbsp;{{ 'FAQ.QUESTION_2' | translate }}</button>
+        <div class="faq-answer"><ul>
+            <li *ngFor="let line of 'FAQ.ANSWER_2' | translate">{{ line }}</li>
+          </ul></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span class="question-indicator"></span>&nbsp;{{ 'FAQ.QUESTION_3' | translate }}</button>
+        <div class="faq-answer"><ul>
+            <li *ngFor="let line of 'FAQ.ANSWER_3' | translate">{{ line }}</li>
+          </ul></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span class="question-indicator"></span>&nbsp;{{ 'FAQ.QUESTION_4' | translate }}</button>
+        <div class="faq-answer"><ul>
+            <li *ngFor="let line of 'FAQ.ANSWER_4' | translate">{{ line }}</li>
+          </ul></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span class="question-indicator"></span>&nbsp;{{ 'FAQ.QUESTION_5' | translate }}</button>
+        <div class="faq-answer"><ul>
+            <li *ngFor="let line of 'FAQ.ANSWER_5' | translate">{{ line }}</li>
+          </ul></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span class="question-indicator"></span>&nbsp;{{ 'FAQ.QUESTION_6' | translate }}</button>
+        <div class="faq-answer"><ul>
+            <li *ngFor="let line of 'FAQ.ANSWER_6' | translate">{{ line }}</li>
+          </ul></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question"><span class="question-indicator"></span>&nbsp;{{ 'FAQ.QUESTION_7' | translate }}</button>
+        <div class="faq-answer"><ul>
+            <li *ngFor="let line of 'FAQ.ANSWER_7' | translate">{{ line }}</li>
+          </ul></div>
+      </div>
+    </div>
+  </section>
+  
+<!--footer1-->
+<footer id="contact" class="footer">
+   <div class="newsletter">
+       <h2>Stay in the loop with our newsletter!</h2>
+       <div class="input-container">
+           <input type="email" placeholder="you@example.com">
+           <button>&rarr;</button>
+       </div>
+       <p>Subscribe to our newsletter and unlock a world of exclusive benefits. Be the first to know about our latest products, special promotions, and exciting updates.</p>
+   </div>
+
+   <div class="footer-links">
+       <div class="column">
+           <h3>Company</h3>
+           <ul>
+               <li><a href="#">Voltlockers</a></li>
+               <li><a href="#">Trendy</a></li>
+               <li><a href="#">Products</a></li>
+               <li><a href="#">Publicity</a></li>
+               <li><a href="#">Promotions</a></li>
+           </ul>
+       </div>
+       <div class="column">
+           <h3>Company</h3>
+           <ul>
+               <li><a href="#">About us</a></li>
+               <li><a href="#">Careers</a></li>
+               <li><a href="#">Contact us</a></li>
+               <li><a href="#">Lift Media</a></li>
+               <li><a href="#">Promotions</a></li>
+           </ul>
+       </div>
+       <div class="column">
+           <h3>Information</h3>
+           <ul>
+               <li><a href="#">FAQ</a></li>
+               <li><a href="#">Blog</a></li>
+               <li><a href="#">Support</a></li>
+               <li><a href="#">Policy</a></li>
+           </ul>
+       </div>
+   </div>
+</footer>
+<!--  footer 2-->
+<!--<footer id="contact" class="footter">
+   <div class="logooo">
+       <img src="assets/mes images/logobleue.png" alt="Voltwise Solutions Logo">
+   </div>
+
+   <div class="contact-info">
+       <h3>Contacts :</h3>
+       <p>Email: <a href="mailto:Voltwisesolutions@gmail.com">Voltwisesolutions&#64;gmail.com</a></p>
+       <p>Tél: <a href="tel:+21654479625">+216 53 536 607 /+216 25 138 796 </a></p>
+   </div>
+
+   <div class="address">
+       <h3>Adresse :</h3>
+       <p>3e Étage, Pépinière Technopole Al Ghazella.</p>
+   </div>
+
+   <div class="social-icons">
+       <a href="https://www.facebook.com/share/1DYfPWkfCc/" target="_blank"> <img src="assets/mes images/facebook.png" alt="Facebook"> <i class="fab fa-facebook-in"></i></a>
+       <a href="https://www.instagram.com/voltwise_solutions?igsh=MWVqenJ5N3dxOHlnNQ==" target="_blank"> <img src="assets/mes images/Logoinstagram.png" alt="Facebook"> <i class="fab fa-instagram"></i></a>
+       <a href="https://www.linkedin.com/company/voltwise-solutions/" target="_blank"> <img src="assets/mes images/LinkedIn.png" alt="Facebook"> <i class="fab fa-linkedin-in"></i></a>
+
+   </div>
+</footer>-->
+<!-- Footer 2 -->
+<footer id="contact" class="footter">
+    <div class="logooo">
+        <img src="assets/mes images/logobleue.png" alt="Voltwise Solutions Logo">
+    </div>
+ 
+    <div class="contact-info">
+        <h3>{{ 'FOOTER.CONTACTS' | translate }}:</h3>
+        <p>{{ 'FOOTER.EMAIL' | translate }}: <a href="mailto:Voltwisesolutions@gmail.com">Voltwisesolutions&#64;gmail.com</a></p>
+        <p>{{ 'FOOTER.PHONE' | translate }}: <a href="tel:+21654479625">+216 53 536 607 / +216 25 138 796</a></p>
+    </div>
+ 
+    <div class="address">
+        <h3>{{ 'FOOTER.ADDRESS' | translate }}:</h3>
+        <p>3e Étage, Pépinière Technopole Al Ghazella.</p>
+    </div>
+ 
+    <div class="social-icons">
+        <a href="https://www.facebook.com/share/1DYfPWkfCc/" target="_blank"> <img src="assets/mes images/facebook.png" alt="Facebook"> <i class="fab fa-facebook-in"></i></a>
+        <a href="https://www.instagram.com/voltwise_solutions?igsh=MWVqenJ5N3dxOHlnNQ==" target="_blank"> <img src="assets/mes images/Logoinstagram.png" alt="Instagram"> <i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/voltwise-solutions/" target="_blank"> <img src="assets/mes images/LinkedIn.png" alt="LinkedIn"> <i class="fab fa-linkedin-in"></i></a>
+    </div>
+ </footer>
+ 
+<script src="assets/js/script.js"></script>
+
+
+
