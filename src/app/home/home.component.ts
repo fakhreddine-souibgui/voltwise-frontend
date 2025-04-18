@@ -23,16 +23,27 @@ import { TranslateModule,TranslateService  } from '@ngx-translate/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+  currentLang = 'fr';
   constructor(private translate: TranslateService,@Inject(PLATFORM_ID) private platformId: Object, private dialog: MatDialog , private viewportScroller: ViewportScroller ,http: HttpClient)
-   {}
-
-   currentLang = 'fr';
+   {
+    if (isPlatformBrowser(this.platformId)) {
+      // Seulement dans le navigateur !
+      this.translate.setDefaultLang(this.currentLang);
+      this.translate.use(this.currentLang);
+   }
+  }
+   /*currentLang = 'fr';
   switchLang(lang: string) {
     this.translate.use(lang);
     this.currentLang = lang;
-  }
-
+  }*/
+    switchLang(lang: string) {
+      this.currentLang = lang;
+  
+      if (isPlatformBrowser(this.platformId)) {
+        this.translate.use(lang);
+      }
+    }
   
 
   openDialogformulaire() {
