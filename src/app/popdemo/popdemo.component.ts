@@ -45,7 +45,7 @@ export class PopdemoComponent {
     if (this.form.valid) {
       const formData = this.form.value;
   
-      this.http.post('http://localhost:3000/api/reservation', formData).subscribe({
+      this.http.post('http://51.38.235.56:3000/api/reservation', formData).subscribe({
         next: (res) => {
           console.log('Données envoyées avec succès !', res);
           this.dialogRef.close();

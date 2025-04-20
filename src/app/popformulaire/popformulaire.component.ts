@@ -24,7 +24,7 @@ export class PopformulaireComponent {
   constructor(private http: HttpClient) {}
 
   onSubmit() {
-    this.http.post('http://localhost:3000/api/formulaire', this.myForm.value)
+    this.http.post('http://51.38.235.56:3000/api/formulaire', this.myForm.value)
       .subscribe(response => {
         console.log("Réponse du serveur :", response);
       }, error => {

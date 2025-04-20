@@ -43,7 +43,7 @@ export class AdminComponent implements OnInit {
     this.getReservations();
   }
     getDemandes() {
-      this.http.get<any[]>(`http://localhost:3000/api/demandes?page=${this.currentPage}`)
+      this.http.get<any[]>(`http://51.38.235.56:3000/api/demandes?page=${this.currentPage}`)
         .subscribe(data => {
           this.demandes = data;
         });
@@ -64,7 +64,7 @@ prevPage() {
 }
 
   updateStatut(id: number, statut: string): void {
-    this.http.patch(`http://localhost:3000/api/demandes/${id}`, { statut }).subscribe(
+    this.http.patch(`http://51.38.235.56:3000/api/demandes/${id}`, { statut }).subscribe(
       () => this.getDemandes(),
       error => console.error('Erreur lors de la mise à jour du statut', error)
     );
@@ -78,7 +78,7 @@ prevPage() {
   }*/
     deleteDemande(id: number): void {
       if (confirm("Voulez-vous vraiment supprimer cette demande ?")) {
-        this.http.delete(`http://localhost:3000/api/demandes/${id}`).subscribe(
+        this.http.delete(`http://51.38.235.56:3000/api/demandes/${id}`).subscribe(
           () => {
             console.log(`Demande ${id} supprimée avec succès.`);
             this.getDemandes();  // Rafraîchir la liste après suppression
@@ -101,7 +101,7 @@ saveChanges(): void {
   console.log("Mise à jour de la demande avec ID :", this.selectedDemande.id);
   console.log("Données envoyées :", this.selectedDemande);
 
-  this.http.put(`http://localhost:3000/api/demandes/${this.selectedDemande.id}`, this.selectedDemande).subscribe({
+  this.http.put(`http://51.38.235.56:3000/api/demandes/${this.selectedDemande.id}`, this.selectedDemande).subscribe({
     next: () => {
       console.log('Modification réussie');
       this.getDemandes(); // Rafraîchir la liste des demandes
@@ -113,7 +113,7 @@ saveChanges(): void {
 
 
 getReservations(): void {
-  this.http.get<any[]>('http://localhost:3000/api/reservations').subscribe(data => {
+  this.http.get<any[]>('http://51.38.235.56:3000/api/reservations').subscribe(data => {
     this.reservations = data;
   });
 }
