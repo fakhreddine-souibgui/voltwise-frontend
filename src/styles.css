@@ -14,3 +14,16 @@ html, body { height: 200%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /*@import 'leaflet/dist/leaflet.css';*/
 
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Taille de police adaptée aux mobiles */
+        background-size: auto; /* Ajuste l'image de fond pour les petits écrans */
+        height: 100%;
+    }
+
+    /* Ajouter des ajustements supplémentaires pour les petits écrans */
+    .some-class {
+        padding: 10px;
+        margin: 0;
+    }
+}
