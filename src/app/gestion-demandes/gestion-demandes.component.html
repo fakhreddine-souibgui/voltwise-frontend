@@ -1,0 +1,61 @@
+<div class="container">
+  <!-- Filtres haut -->
+  <div class="filter-buttons">
+    <button class="btn active">Type Clients</button>
+    <button class="btn">Type Publicitaire</button>
+  </div>
+
+  <!-- Tableau -->
+  <table>
+    <thead>
+      <tr>
+        <th>Full name</th>
+        <th>Job</th>
+        <th>Email</th>
+        <th>Phone 1</th>
+        <th>Phone 2</th>
+        <th>Gouvernorat</th>
+        <th>Ville</th>
+        <th>Type date</th>
+        <th>Entreprise</th>
+        <th>Date</th>
+        <th>Message</th>
+        <th>Actions xxxx</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let demande of demandes">
+        <td><b>{{demande.nom}}</b></td>
+        <td>{{demande.fonction}}</td>
+        <td>{{demande.email}}</td>
+        <td>{{demande.tel}}</td>
+        <td>XXXXXX</td>
+        <td>{{demande.Gouvernorat}}</td>
+        <td>Ben arous</td>
+        <td>Client</td>
+        <td>{{demande.nomentreprise}}</td>
+        <td>16/04/2024</td>
+        <td>{{demande.message}}</td>
+        <td class="actions">
+          <button class="btn green">✔</button>
+          <button class="btn red" (click)="deleteDemande(demande.id)">✖</button>
+          <button class="btn dark" (click)="downloadPDF(demande)">⬇</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="pagination">
+    <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">&lt;</button>
+    <button *ngFor="let page of totalPages" (click)="changePage(page)" [class.active]="page === currentPage">{{page}}</button>
+    <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages.length">&gt;</button>
+  </div>
+
+  <!-- Filtres bas -->
+  <div class="bottom-filters">
+    <button class="btn red">Clients</button>
+    <button class="btn yellow">Tous</button>
+    <button class="btn green">Publicitaires</button>
+  </div>
+</div>

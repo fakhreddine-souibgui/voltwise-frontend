@@ -1,0 +1,551 @@
+<div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="assets/mes images/Primary Logo.png" alt="Voltwise Solutions">
+      <!--  <span>Voltwise Solutions</span>-->
+      </div>
+      <nav class="nav">
+        <a href="#"(click)="activeSection = 'dashboard'; $event.preventDefault()"><i class="fa fa-home"></i><span>Dashboard</span></a>
+        <!--<a href="#" class="active"><i class="fa fa-user"></i><span>Profile</span></a>-->
+        <a href="#" (click)="activeSection = 'profile'; $event.preventDefault()"><i class="fa fa-user"></i><span>Profile</span></a>
+       <!-- <a href="#"><i class="fa fa-credit-card"></i><span>Payment</span></a>-->
+       <a href="#" (click)="activeSection = 'payment';$event.preventDefault()"><i class="fa fa-credit-card"></i><span>Payment</span> </a>
+        <a href="#" (click)="activeSection = 'reclamation';$event.preventDefault()"><i class="fa fa-exclamation-circle"></i><span>Reclamation</span></a>
+        <a href="#" (click)="activeSection = 'reviews';$event.preventDefault()"><i class="fa fa-star"></i><span>Customer Reviews</span></a>
+        <a href="#" (click)="activeSection = 'spaces';$event.preventDefault()"><i class="fa fa-th"></i><span>Spaces</span></a>
+      </nav>
+      <div class="help-card">
+        <img src="assets/mes images/Icon.png" alt="Voltwi">
+        <p><strong>Need help?</strong><br/>Please check our docs</p>
+        <button>Documentation</button>
+      </div>
+    </aside>
+    <!-- Main content -->
+    <div class="main">
+      <!-- Top bar -->
+      <header class="header">
+        <div class="search">
+          <input type="text" placeholder="Search for something">
+          <i class="fa fa-search"></i>
+        </div>
+        <div class="header-icons">
+          <i class="fa fa-cog"></i>
+          <i class="fa fa-bell"></i>
+          <img class="avatar-sm" src="assets/mes images/user.jpg" alt="User">
+        </div>
+      </header>
+  
+      <!-- Profile banner + card -->
+      <div *ngIf="activeSection === 'profile'">
+
+      <section class="profile-header">
+        <div class="profile-banner"></div>
+        <div class="profile-card">
+          <img class="avatar-lg" src="assets/mes images/user.jpg" alt="Esthera Jackson">
+          <div class="profile-info" *ngIf="user">
+            <h2>{{ user.fullName }}</h2>
+            <p>{{ user.email }}</p>
+          </div>
+          <div class="profile-actions">
+            <button class="btn-outline">Overview</button>
+            <button class="btn-outline">Parameters</button>
+          </div>
+        </div>
+      </section>
+  
+      <!-- Settings & Info cards -->
+      <section class="profile-cards">
+        <div class="card settings-card">
+          <h3>Platform Settings</h3>
+          <div class="settings-group">
+            <h4>Account</h4>
+            <div class="setting-item">
+              <span>Email me when I receive new reclamation</span>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="setting-item">
+              <span>Email me when payment is done successfully</span>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="setting-item">
+              <span>Email me when a station needs maintenance</span>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+          <div class="settings-group">
+            <h4>Application</h4>
+            <div class="setting-item">
+              <span>New launches and projects</span>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="setting-item">
+              <span>Monthly product updates</span>
+              <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+            <div class="setting-item">
+              <span>Subscribe to newsletter</span>
+              <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+  
+        <div *ngIf="user" class="card info-card">
+          <h3>Profile Information</h3>
+          <p>
+            Hi, I’m {{ user.fullName }}, Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <ul class="info-list">
+            <li><strong>Full Name:</strong>  {{ user.fullName }}</li>
+            <li><strong>Mobile:</strong>  {{ user.phone }}</li>
+            <li><strong>Email:</strong> {{ user.email }}</li>
+            <li><strong>Location:</strong> {{ user.governorate }}</li>
+            <li><strong>Social Media:</strong>
+              <a href="#"><img src="assets/mes images/facebookcc.png" alt="facebookcc"><i class="fa fa-facebook"></i></a>
+              <a href="#"><img src="assets/mes images/twittercc.png" alt="twittercc"><i class="fa fa-twitter"></i></a>
+              <a href="#"><img src="assets/mes images/instagramcc.png" alt="instagramcc"><i class="fa fa-instagram"></i></a>
+            </li>
+          </ul>
+        </div>
+          
+      </section>
+        <section class="stations-section">
+            <div class="stations-header">
+              <h3>Stations</h3>
+              <div class="stations-actions">
+                <i class="fa fa-th-large"></i>
+                <i class="fa fa-info-circle"></i>
+                <i class="fa fa-trash"></i>
+              </div>
+            </div>
+          
+            <table class="stations-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Référence</th>
+                  <th>Espace</th>
+                  <th>Adresse</th>
+                  <th>Date d’installation</th>
+                  <th>Details</th>
+                </tr>
+              </thead>
+              <tbody>
+               <tr *ngFor="let station of paginatedStations">
+                  <td><input type="checkbox"></td>
+                  <td>{{ station.reference }}</td>
+                  <td>{{ station.espace }}</td>
+                  <td>{{ station.adresse }}</td>
+                  <td>{{ station.date_installation | date:'dd/MM/yyyy' }}</td>
+                  <td><button class="btn-details">See Details</button></td>
+                </tr>
+              </tbody>
+            </table>
+            <button (click)="openPopup()"class="btn-add-station">Add Station</button>
+
+          <!-- POPUP -->
+  <div class="popup-overlay" *ngIf="showPopup">
+    <div class="popup-content">
+      <h4>Ajouter une Station</h4>
+      <input type="text" [(ngModel)]="newStation.reference" placeholder="Référence">
+      <input type="text" [(ngModel)]="newStation.espace" placeholder="Espace">
+      <input type="text" [(ngModel)]="newStation.adresse" placeholder="Adresse">
+      <input type="date" [(ngModel)]="newStation.date_installation">
+      <div class="popup-actions">
+        <button (click)="addStation()">Ajouter</button>
+        <button class="close-btn" (click)="closePopup()">Annuler</button>
+      </div>
+    </div>
+  </div>
+  <div class="pagination">
+    <a href="#" (click)="previousPage($event)" [class.disabled]="currentPage === 1">Previous</a>
+  
+    <a *ngFor="let page of pages"
+       href="#"
+       (click)="goToPage(page, $event)"
+       [class.active]="page === currentPage">
+      {{ page }}
+    </a>
+  
+    <a href="#" (click)="nextPage($event)" [class.disabled]="currentPage === totalPages">Next</a>
+  </div>
+  
+      </section>
+    </div>
+ 
+        <!-- payment -->
+     <!-- <div *ngIf="activeSection === 'payment'">
+
+      <div class="payment-container">
+        <div class="header-cards">
+          <div class="card">
+            <h4>Last Month Revenue</h4>
+            <p class="amount">$825,000 <span class="success">+55%</span></p>
+          </div>
+          <div class="card">
+            <h4>Pending Money</h4>
+            <p class="amount">$90,000</p>
+          </div>
+          <div class="card">
+            <h4>Payment Method</h4>
+            <p class="amount">15561********33316546513</p>
+          </div>
+        </div>
+      
+        <h2>Stations Payment</h2>
+        <table class="payment-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Station Ref</th>
+              <th>Status</th>
+              <th>Last Transaction</th>
+              <th>Amount</th>
+              <th>P. Method</th>
+              <th>Payment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let station of stations">
+              <td><input type="checkbox" /></td>
+              <td>{{ station.ref }}</td>
+              <td>
+                <span class="status" [ngClass]="station.status.toLowerCase()">{{ station.status }}</span>
+              </td>
+              <td>{{ station.date }}</td>
+              <td>{{ station.amount }}</td>
+              <td>
+                <img [src]="station.card === 'Visa' ? 'assets/mes images/Visa.png' : 'assets/mes images/Mastercard.png'" class="card-icon" />
+                •••• {{ station.cardNumber }}
+              </td>
+              <td>
+                <button [ngClass]="station.status.toLowerCase()" class="pay-btn">
+                  {{ station.status === 'Succeeded' ? 'Payer' : 'Payer' }}
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      
+        <div class="pagination">
+          <span class="arrow">‹ Previous</span>
+          <span class="page active">1</span>
+          <span class="page">2</span>
+          <span class="page">3</span>
+          <span class="page">4</span>
+          <span class="arrow">Next ›</span>
+        </div>
+      </div>
+    </div>-->
+    <!--dashboard-->
+    <div *ngIf="activeSection === 'dashboard'" class="dashboard-content">
+      <div class="stats-cards">
+        <div class="card">
+          <h4>Total Users</h4>
+          <p>$825,000 <span class="success">+55%</span></p>
+        </div>
+        <div class="card">
+          <h4>Complete Charges</h4>
+          <p>$825,000 <span class="success">+55%</span></p>
+        </div>
+        <div class="card">
+          <h4>Total Revenues</h4>
+          <p>$640,000</p>
+        </div>
+        <div class="card">
+          <h4>Number of Stations</h4>
+          <p>5 Stations</p>
+        </div>
+      </div>
+    
+      <div class="chart-section">
+        <div class="year-selector">
+          <label>Year</label>
+          <input type="radio" checked> 2023
+        </div>
+        <div class="month-row">
+          <span>January</span>
+          <span>February</span>
+          <span>March</span>
+          <span>April</span>
+          <span>May</span>
+          <span>June</span>
+          <span>July</span>
+          <span>August</span>
+          <span>September</span>
+          <span>October</span>
+          <span>November</span>
+          <span>December</span>
+        </div>
+        
+        <div class="value-row">
+          <span>500</span>
+          <span>1000</span>
+          <span>50</span>
+          <span>600</span>
+          <span>300</span>
+          <span>400</span>
+          <span>70</span>
+          <span>80</span>
+          <span>35</span>
+          <span>90</span>
+          <span>60</span>
+          <span>700</span>
+        </div>
+        
+    
+        <!-- Bar Chart -->
+        <div class="bar-chart">
+          <div class="bar" *ngFor="let bar of barData" [style.height.px]="bar.height" [ngClass]="bar.class">{{ bar.label }}</div>
+        </div>
+      </div>
+    
+      <div class="revenue-graph-section">
+        <div class="line-chart">
+          <h4>Your Revenues Per Month</h4>
+          <!-- Replace this with ngx-charts or canvas chart if needed -->
+          <div class="placeholder-chart">[Line Chart Placeholder]</div>
+        </div>
+    
+        <div class="earnings-card">
+          <h4>Earnings</h4>
+          <p class="amount">$6078.76</p>
+          <p class="subtext">Profit is 48% more than last month</p>
+          <div class="progress-circle">
+            <svg width="100" height="100">
+              <circle cx="50" cy="50" r="40" stroke="#eee" stroke-width="10" fill="none"/>
+              <circle cx="50" cy="50" r="40" stroke="#00c897" stroke-width="10" fill="none"
+                      stroke-dasharray="251.2" stroke-dashoffset="50"/>
+              <text x="50%" y="55%" text-anchor="middle" fill="#333" font-size="18px">80%</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- reclamation -->
+<div *ngIf="activeSection === 'reclamation'" class="reclamation-section">
+  <div class="reclamations-wrapper">
+      <h2>Reclamations</h2>
+      <table>
+        <thead>
+          <tr>
+            <th><input type="checkbox"></th>
+            <th>Date Reclamation</th>
+            <th>Categorie</th>
+            <th>Description</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reclamation of paginatedReclamations">
+            <td><input type="checkbox"></td>
+            <td>{{ reclamation.date }}</td>
+            <td>{{ reclamation.categorie }}</td>
+            <td>{{ reclamation.description }} <a href="#">See more</a></td>
+            <td>
+              <span [ngClass]="{
+                'status-answered': reclamation.status === 'Answered',
+                'status-pending': reclamation.status === 'Pending',
+                'status-problem': reclamation.status === 'Problem'
+              }">
+                {{ reclamation.status }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+      <button class="add-button" (click)="openReclamationPopup()">Add Reclamation</button>
+      <!-- POPUP RECLAMATION -->
+<div class="popup-overlay" *ngIf="showReclamationPopup">
+  <div class="popup-content">
+    <h4>Ajouter une Réclamation</h4>
+    <input type="text" [(ngModel)]="newReclamation.categorie" placeholder="Catégorie">
+    <textarea [(ngModel)]="newReclamation.description" placeholder="Description"></textarea>
+    <div class="popup-actions">
+      <button (click)="addReclamation()">Ajouter</button>
+      <button class="close-btn" (click)="closeReclamationPopup()">Annuler</button>
+    </div>
+  </div>
+</div>
+
+    
+<div class="pagination">
+  <button (click)="changeReclamationPage(currentReclamationPage - 1)" [disabled]="currentReclamationPage === 1">Previous</button>
+
+  <button 
+    *ngFor="let page of [].constructor(totalReclamationPages); let i = index"
+    (click)="changeReclamationPage(i + 1)"
+    [class.active]="currentReclamationPage === i + 1">
+    {{ i + 1 }}
+  </button>
+
+  <button (click)="changeReclamationPage(currentReclamationPage + 1)" [disabled]="currentReclamationPage === totalReclamationPages">Next</button>
+</div>
+
+    </div>
+</div>
+
+<!--customer review------------------->   
+<!-- customer-reviews.component.html -->
+<div *ngIf="activeSection==='reviews'" class="reviews-dashboard container mx-auto p-6">
+  <div class="dashboard-content">
+      <div class="insights">
+        <div class="card">
+          <h3>Visitor Insights</h3>
+          <img src="assets/visitor-insights.png" alt="Visitor Graph">
+        </div>
+        <div class="card">
+          <h3>Customer Fulfilment</h3>
+          <img src="assets/customer-fulfilment.png" alt="Fulfilment Graph">
+        </div>
+      </div>
+    
+      <div class="questionnaire-section">
+        <h2>Questionnaires</h2>
+    
+        <div class="filters">
+          <button>Date range</button>
+          <button>Status</button>
+          <button>Entreprise</button>
+        </div>
+    
+        <table class="questionnaire-table">
+          <thead>
+            <tr>
+              <th>Entreprise</th>
+              <th>Type Questionnaire</th>
+              <th>Status</th>
+              <th>Number Of questions</th>
+              <th>Number of answers</th>
+              <th>Display Data</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let q of questionnaires">
+              <td><input type="checkbox"> {{ q.entreprise }}</td>
+              <td>{{ q.type }}</td>
+              <td><span [ngClass]="getStatusClass(q.status)">{{ q.status }}</span></td>
+              <td>{{ q.questions }}</td>
+              <td>{{ q.answers }}</td>
+              <td><button class="display-btn">Display Data</button></td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <div class="pagination">
+          <button disabled>‹ Previous</button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>Next ›</button>
+        </div>
+    
+        <button class="add-btn">Add Questionnaire</button>
+      </div>
+    </div>
+    
+</div>
+<!--spaces**************************-->
+<div *ngIf="activeSection==='spaces'" class="spaces-dashboard container mx-auto p-6">
+
+<div class="espaces-wrapper">
+  <h2>Espaces</h2>
+  <table>
+    <thead>
+      <tr>
+        <th><input type="checkbox"></th>
+        <th>Nom Espace</th>
+        <th>Ville</th>
+        <th>Gouvernorat</th>
+        <th>Activité</th>
+        <th>Nbre De Station</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let espace of pagedEspaces">
+        <td><input type="checkbox"></td>
+        <td>{{ espace.nom }}</td>
+        <td>{{ espace.ville }}</td>
+        <td>{{ espace.gouvernorat }}</td>
+        <td>{{ espace.activite }}</td>
+        <td>{{ espace.stations }}</td>
+        <td><button class="btn-details">See Details</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="add-button" (click)="openAddSpaceModal()">Add Spaces</button>
+
+  <div class="popup-overlay" *ngIf="showAddSpaceModal">
+    <div class="popup-content">
+      <h4>Ajouter un Espace</h4>
+      <input type="text" [(ngModel)]="newEspace.nom" placeholder="Nom">
+      <input type="text" [(ngModel)]="newEspace.ville" placeholder="Ville">
+      <input type="text" [(ngModel)]="newEspace.gouvernorat" placeholder="Gouvernorat">
+      <input type="text" [(ngModel)]="newEspace.activite" placeholder="Activité">
+      <input type="number" [(ngModel)]="newEspace.stations" placeholder="Nbre de Stations">
+      <div class="popup-actions">
+        <button (click)="addSpace()">Ajouter</button>
+        <button class="close-btn" (click)="closeAddSpaceModal()">Annuler</button>
+      </div>
+    </div>
+  </div>
+  
+<!-- Pagination code (optional) -->
+<div class="pagination">
+  <button 
+    (click)="changeEspacePage(currentEspacePage - 1)" 
+    [disabled]="currentEspacePage === 1">
+    Previous
+  </button>
+
+  <button 
+    *ngFor="let page of [].constructor(totalEspacePages); let i = index"
+    (click)="changeEspacePage(i + 1)"
+    [class.active]="currentEspacePage === i + 1">
+    {{ i + 1 }}
+  </button>
+
+  <button 
+    (click)="changeEspacePage(currentEspacePage + 1)" 
+    [disabled]="currentEspacePage === totalEspacePages">
+    Next
+  </button>
+</div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+    </div>
+</div>

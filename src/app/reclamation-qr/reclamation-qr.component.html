@@ -1,0 +1,54 @@
+<h2>Formulaire de Réclamation</h2>
+
+<form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+
+  <input type="text" name="nom" [(ngModel)]="formData.nom" placeholder="Nom" required />
+  <input type="text" name="prenom" [(ngModel)]="formData.prenom" placeholder="Prénom" required />
+  <input type="email" name="email" [(ngModel)]="formData.email" placeholder="Email" required />
+  <input type="tel" name="telephone" [(ngModel)]="formData.telephone" placeholder="Téléphone" required />
+
+  <label>Type de retour</label>
+  <select name="type_retour" [(ngModel)]="formData.type_retour" required>
+    <option value="">-- Choisir --</option>
+    <option value="Feedback">Feedback</option>
+    <option value="Suggestion d’amélioration">Suggestion d’amélioration</option>
+    <option value="Réclamation">Réclamation</option>
+    <option value="Problème technique">Problème technique</option>
+  </select>
+
+  <label>Lieu ou nom de l’établissement où se trouve la Nano Box</label>
+  <select name="lieu" [(ngModel)]="formData.lieu" required>
+    <option value="">-- Sélectionner --</option>
+    <option *ngFor="let gov of gouvernorats" [value]="gov">{{ gov }}</option>
+  </select>
+
+  <label>Date du problème</label>
+  <input type="date" name="date_probleme" [(ngModel)]="formData.date_probleme" required />
+
+  <label>Heure du problème</label>
+  <input type="time" name="heure_probleme" [(ngModel)]="formData.heure_probleme" required />
+
+  <label>Quel était l’usage de la Nano Box ?</label>
+  <select name="usage_nano_box" [(ngModel)]="formData.usage_nano_box" required>
+    <option value="">-- Choisir --</option>
+    <option value="Recharge de smartphone Android (USB-C)">Recharge de smartphone Android (USB-C)</option>
+    <option value="Recharge d’iPhone (Lightning)">Recharge d’iPhone (Lightning)</option>
+    <option value="Autre">Autre</option>
+  </select>
+
+  <label>Expliquez-nous ce qui s’est passé ou ce que vous souhaitez nous dire :</label>
+  <textarea name="description" [(ngModel)]="formData.description" required></textarea>
+
+  <label>Souhaitez-vous un retour de notre équipe ?</label>
+  <select name="souhaite_retour" [(ngModel)]="formData.souhaite_retour" required>
+    <option value="">-- Choisir --</option>
+    <option value="Oui, par téléphone">Oui, par téléphone</option>
+    <option value="Oui, par email">Oui, par email</option>
+    <option value="Non, ce n’est pas nécessaire">Non, ce n’est pas nécessaire</option>
+  </select>
+
+  <label>Joindre une photo (optionnel)</label>
+  <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+
+  <button type="submit">Envoyer</button>
+</form>

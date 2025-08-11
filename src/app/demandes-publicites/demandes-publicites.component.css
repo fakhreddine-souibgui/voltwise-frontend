@@ -1,0 +1,94 @@
+.main-container {
+  background-color: #fff;
+  padding: 0 20px 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.custom-table thead {
+  background-color: #eafaf5;
+}
+
+.custom-table thead th {
+  text-align: left;
+  padding: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.custom-table tbody td {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #000;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.icon-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-btn.info img {
+  filter: invert(39%) sepia(95%) saturate(1269%) hue-rotate(181deg) brightness(92%) contrast(96%);
+}
+
+.icon-btn.delete img {
+  filter: invert(38%) sepia(74%) saturate(4386%) hue-rotate(351deg) brightness(96%) contrast(93%);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 12px;
+  gap: 6px;
+}
+
+.pagination-controls select {
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+.pagination-controls button {
+  padding: 6px 12px;
+  border: none;
+  background: #eee;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.pagination-controls button.active {
+  background: #30caa0;
+  color: white;
+}
+
+.pagination-controls button:disabled {
+  cursor: not-allowed;
+  background: #ccc;
+}
+
+.pagination-controls span {
+  font-size: 14px;
+}

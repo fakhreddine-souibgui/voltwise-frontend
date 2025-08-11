@@ -1,0 +1,55 @@
+<div class="main-container">
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>Notre Espace</th>
+        <th>Gouvernorat</th>
+        <th>Ville</th>
+        <th>Secteur d’activité</th>
+        <th>Client</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let espace of espacesPagines">
+        <td>{{ espace.nom }}</td>
+        <td class="text-muted">{{ espace.gouvernorat }}</td>
+        <td class="text-muted">{{ espace.ville }}</td>
+        <td>{{ espace.activite }}</td>
+        <td>{{ espace.client }}</td>
+        <td>
+          <button class="icon-btn edit" (click)="ouvrirPopupModification(espace)">
+            <img src="assets/mes images/edit.png" alt="Edit" />
+          </button>
+          <button class="icon-btn delete" (click)="supprimerEspace(espace)">
+            <img src="assets/mes images/remove.png" alt="Delete" />
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="bottom-bar">
+    <button class="add-btn" (click)="ajouterEspace()">Add Espace</button>
+
+    <div class="pagination-controls">
+      <span>Page</span>
+      <select [(ngModel)]="currentPage" (change)="changerPage(currentPage)">
+        <option *ngFor="let page of pages" [value]="page">{{ page }}</option>
+      </select>
+      <span>of {{ totalPages }}</span>
+
+      <button (click)="changerPage(currentPage - 1)" [disabled]="currentPage === 1">‹</button>
+
+      <button *ngFor="let page of pages.slice(0, 5)"
+              (click)="changerPage(page)"
+              [class.active]="page === currentPage">
+        {{ page }}
+      </button>
+
+      <span *ngIf="totalPages > 6">...</span>
+
+      <button (click)="changerPage(currentPage + 1)" [disabled]="currentPage === totalPages">›</button>
+    </div>
+  </div>
+</div>

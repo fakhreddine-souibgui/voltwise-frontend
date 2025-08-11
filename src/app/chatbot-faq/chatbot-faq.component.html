@@ -1,0 +1,108 @@
+<!-- chatbot-faq.component.html -->
+<!--<div class="faq-container">
+  <h2>Gestion de la FAQ Chatbot</h2>
+
+  <div class="faq-form">
+    <input [(ngModel)]="newQuestion" placeholder="Nouvelle question" />
+    <textarea [(ngModel)]="newAnswer" placeholder="Réponses séparées par |"></textarea>
+    <button (click)="addFaq()">Ajouter</button>
+  </div>
+
+  <table class="faq-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Question</th>
+        <th>Réponses</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let q of faq">
+        <td>{{ q.id }}</td>
+        <td><input [(ngModel)]="q.question" /></td>
+        <td><textarea [(ngModel)]="q.answersText"></textarea></td>
+        <td>
+          <button (click)="updateFaq(q)">Modifier</button>
+          <button (click)="deleteFaq(q.id)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>-->
+<!-- chatbot-faq.component.html -->
+<div class="faq-container">
+  <h2>Gestion de la FAQ Chatbot</h2>
+
+  <div class="faq-form">
+    <input [(ngModel)]="newQuestion" placeholder="Nouvelle question" />
+    <textarea [(ngModel)]="newAnswer" placeholder="Réponses séparées par |"></textarea>
+    <button (click)="addFaq()">Ajouter</button>
+  </div>
+
+  <table class="faq-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Question</th>
+        <th>Réponses</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let q of faq">
+        <td>{{ q.id }}</td>
+        <td><input [(ngModel)]="q.question" /></td>
+        <td><textarea [(ngModel)]="q.answersText"></textarea></td>
+        <td>
+          <button class="btn btn-update" (click)="updateFaq(q)">Modifier</button>
+          <button class="btn btn-delete" (click)="deleteFaq(q.id)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="history-container">
+  <h2>Historique des échanges du chatbot</h2>
+  <!-- Bouton Rafraîchir -->
+  <button (click)="loadHistory()" class="refresh-button">
+    🔄 Rafraîchir
+  </button>
+  <div class="loader" *ngIf="isLoading"></div>
+
+ <div class="scroll-wrapper">
+    <div class="search-container">
+  <input
+    type="text"
+    placeholder="Rechercher dans l’historique..."
+    [(ngModel)]="searchTerm"
+    (input)="filterHistory()"
+  />
+</div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Message</th>
+          <th>Réponse</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let item of filteredHistory; let i = index" (click)="toggleRow(i)"[class.expanded]="expandedRow === i">    
+  <td>
+    <div class="cell-content">
+      {{ expandedRow === i ? item.message : (item.message | slice:0:80)  }}
+    </div>
+  </td>        
+<td>
+    <div class="cell-content">
+      {{ expandedRow === i ? item.response : (item.response | slice:0:80) + '...' }}
+    </div>
+  </td>          <td>{{ item.created_at | date:'short' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

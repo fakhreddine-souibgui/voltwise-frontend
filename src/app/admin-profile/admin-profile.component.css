@@ -1,0 +1,188 @@
+.admin-profile {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.admin-profile h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 700;
+  color: #222;
+}
+
+.profile-img {
+  display: block;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 25px auto;
+  border: 3px solid #4a90e2;
+  box-shadow: 0 3px 8px rgba(74,144,226,0.4);
+}
+
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 15px;
+  color: #444;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="file"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.8px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form input[type="file"]:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+form button {
+  margin-top: 25px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4a90e2;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+form button:hover {
+  background-color: #357abd;
+}
+
+form button[type="button"] {
+  background-color: #888;
+  margin-left: 15px;
+}
+
+form button[type="button"]:hover {
+  background-color: #666;
+}
+
+.admin-profile p {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.admin-profile button {
+  margin-top: 25px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4a90e2;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.admin-profile button:hover {
+  background-color: #357abd;
+}
+
+form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 15px;
+  color: #444;
+  position: relative;
+  font-size: 14px;
+  user-select: none;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="file"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fafafa;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus,
+form input[type="file"]:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.6);
+  background-color: #fff;
+  outline: none;
+}
+
+form input[type="file"] {
+  padding: 6px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 350px;
+
+}
+
+form input::placeholder {
+  color: #bbb;
+  font-style: italic;
+}
+
+/* Boutons en mode édition */
+form button[type="submit"] {
+  background-color: #4a90e2;
+  color: white;
+  font-weight: 700;
+  padding: 14px 25px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  margin-top: 30px;
+}
+
+form button[type="submit"]:hover {
+  background-color: #357abd;
+}
+
+form button[type="button"] {
+  background-color: #ccc;
+  color: #444;
+  margin-left: 1px;
+  padding: 14px 25px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.25s ease;
+  margin-top: 30px;
+}
+
+form button[type="button"]:hover {
+  background-color: #999;
+}

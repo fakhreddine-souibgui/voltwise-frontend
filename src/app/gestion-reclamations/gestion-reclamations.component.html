@@ -1,0 +1,306 @@
+<div class="main-container">
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>Date Reclamation</th>
+        <th>User</th>
+        <th>Categorie</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--<tr *ngFor="let rec of reclamations">
+        <td>{{ rec.date }}</td>
+        <td>{{ rec.user }}</td>
+        <td>{{ rec.categorie }}</td>
+        <td>{{ rec.description }}</td>
+      </tr>-->
+      <tr *ngFor="let rec of reclamationsPagines">
+  <td>{{ rec.date | date: 'short' }}</td>
+  <td>{{ rec.user }}</td>
+  <td>{{ rec.categorie }}</td>
+  <td>{{ rec.description }}</td>
+</tr>
+
+    </tbody>
+  </table>
+
+  <div class="bottom-bar">
+    <button class="add-btn">Catégorie</button>
+
+    <div class="pagination-controls">
+      <span>Page</span>
+      <select [(ngModel)]="page">
+        <option *ngFor="let p of [].constructor(totalPages); let i = index" [value]="i+1">
+          {{ i+1 }}
+        </option>
+      </select>
+      <span>of {{ totalPages }}</span>
+
+      <button [disabled]="page === 1" (click)="page = page - 1">&lt;</button>
+
+      <button *ngFor="let p of [1, 2, 3]" 
+              [class.active]="page === p" 
+              (click)="page = p">
+        {{ p }}
+      </button>
+
+      <span>...</span>
+
+      <button (click)="page = totalPages" [class.active]="page === totalPages">
+        {{ totalPages }}
+      </button>
+    </div>
+  </div>
+</div>
+<!--reclamation qr -->
+<!--<div class="main-container">
+  <h2>Réclamations QR</h2>
+
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Téléphone</th>
+        <th>Type Box</th>
+        <th>Entreprise</th>
+        <th>Gouvernorat</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr *ngFor="let item of paginatedReclamations" (click)="openPopup(item)" class="clickable-row">
+            <td>{{ item.nom }}</td>
+        <td>{{ item.prenom }}</td>
+        <td>{{ item.telephone }}</td>
+        <td>{{ item.type_box }}</td>
+        <td>{{ item.entreprise }}</td>
+        <td>{{ item.gouvernorat }}</td>
+        <td>{{ item.date_reclamation | date:'short' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="bottom-bar">
+    <span>Total : {{ totalItems }}</span>
+
+    <div class="pagination-controls">
+      <button (click)="prevPage()" [disabled]="currentPage === 1">«</button>
+<button
+  *ngFor="let page of [].constructor(totalPages); let i = index"
+  [class.active]="currentPage === i + 1"
+  (click)="goToPage(i + 1)">
+  {{ i + 1 }}
+</button>
+<button (click)="nextPage()" [disabled]="currentPage === totalPages">»</button>
+
+    </div>
+  </div>
+</div>-->
+<!--popup-->
+<!--<div class="popup-overlay" *ngIf="showPopup">
+  <div class="popup-content">
+    <h3>Détails de la Réclamation</h3>
+    <p><strong>Nom :</strong> {{ selectedReclamation.nom }}</p>
+    <p><strong>Prénom :</strong> {{ selectedReclamation.prenom }}</p>
+    <p><strong>Téléphone :</strong> {{ selectedReclamation.telephone }}</p>
+    <p><strong>Type Box :</strong> {{ selectedReclamation.type_box }}</p>
+    <p><strong>Entreprise :</strong> {{ selectedReclamation.entreprise }}</p>
+    <p><strong>Gouvernorat :</strong> {{ selectedReclamation.gouvernorat }}</p>
+    <hr>
+    <p><strong>Question 1 :</strong> {{ selectedReclamation.question1 }}</p>
+    <p><strong>Question 2 :</strong> {{ selectedReclamation.question2 }}</p>
+    <p><strong>Question 3 :</strong> {{ selectedReclamation.question3 }}</p>
+    <p><strong>Question 4 :</strong> {{ selectedReclamation.question4 }}</p>
+    <p><strong>Question 5 :</strong> {{ selectedReclamation.question5 }}</p>
+
+    <button (click)="closePopup()">Fermer</button>
+  </div>
+</div>-->
+<!-- reclamation qr (NOUVELLE VERSION) -->
+<div class="main-container">
+  <h2>Réclamations QR</h2>
+
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Nom & Prénom</th>
+        <th>Contact</th>
+        <th>Type</th>
+        <th>Lieu</th>
+        <th>Usage</th>
+        <th>Photo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of paginatedReclamations" (click)="openPopup(item)" class="clickable-row">
+        <td>{{ item.date_reclamation | date: 'short' }}</td>
+        <td>{{ item.nom }} {{ item.prenom }}</td>
+        <td>
+          <div>{{ item.telephone }}</div>
+          <div class="muted">{{ item.email }}</div>
+        </td>
+        <td>{{ item.type_retour }}</td>
+        <td>{{ item.lieu }}</td>
+        <td>{{ item.usage_nano_box }}</td>
+        <td>
+          <ng-container *ngIf="item.photo_url; else noPhoto">
+            <a [href]="photoFullUrl(item.photo_url)" target="_blank">Ouvrir</a>
+          </ng-container>
+          <ng-template #noPhoto>—</ng-template>
+        </td>
+      </tr>
+      <tr *ngIf="paginatedReclamations.length === 0">
+        <td colspan="7" class="muted center">Aucune réclamation</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="bottom-bar">
+    <span>Total : {{ totalItems }}</span>
+
+    <div class="pagination-controls">
+      <button (click)="prevPage()" [disabled]="currentPage === 1">«</button>
+
+      <button
+        *ngFor="let p of [].constructor(qrTotalPages); let i = index"
+        [class.active]="currentPage === i + 1"
+        (click)="goToPage(i + 1)">
+        {{ i + 1 }}
+      </button>
+
+      <button (click)="nextPage()" [disabled]="currentPage === qrTotalPages">»</button>
+    </div>
+  </div>
+</div>
+
+<!-- popup (NOUVELLE VERSION) -->
+<!--<div class="popup-overlay" *ngIf="showPopup">
+  <div class="popup-content">
+    <h3>Détails de la Réclamation</h3>
+
+    <p><strong>Date :</strong> {{ selectedReclamation?.date_reclamation | date: 'short' }}</p>
+    <p><strong>Nom & Prénom :</strong> {{ selectedReclamation?.nom }} {{ selectedReclamation?.prenom }}</p>
+
+    <p><strong>Contact :</strong>
+      <br>- Tél : {{ selectedReclamation?.telephone }}
+      <br>- Email : {{ selectedReclamation?.email || '—' }}
+    </p>
+
+    <p><strong>Type :</strong> {{ selectedReclamation?.type_retour }}</p>
+    <p><strong>Lieu :</strong> {{ selectedReclamation?.lieu }}</p>
+
+    <p><strong>Date/Heure du problème :</strong>
+      <br>- Date : {{ selectedReclamation?.date_probleme || '—' }}
+      <br>- Heure : {{ selectedReclamation?.heure_probleme || '—' }}
+    </p>
+
+    <p><strong>Usage :</strong> {{ selectedReclamation?.usage_nano_box }}</p>
+
+    <p><strong>Description :</strong><br>{{ selectedReclamation?.description }}</p>
+
+    <p><strong>Souhaite un retour :</strong> {{ selectedReclamation?.souhaite_retour || '—' }}</p>
+
+    <div *ngIf="selectedReclamation?.photo_url" class="popup-photo">
+      <strong>Photo :</strong><br>
+      <a [href]="photoFullUrl(selectedReclamation.photo_url)" target="_blank">Ouvrir l’image</a>
+      <div class="thumb">
+        <img [src]="photoFullUrl(selectedReclamation.photo_url)" alt="photo réclamation">
+      </div>
+    </div>
+
+    <button (click)="closePopup()">Fermer</button>
+  </div>
+</div>
+-->
+<!-- popup (NOUVELLE VERSION) -->
+<div class="popup-overlay" *ngIf="showPopup" (click)="closePopup()">
+  <div class="popup-card" (click)="$event.stopPropagation()">
+    <div class="popup-header">
+      <h3>Détails de la réclamation</h3>
+      <button class="icon-btn" (click)="closePopup()" aria-label="Fermer">✕</button>
+    </div>
+
+    <div class="popup-body">
+      <div class="meta-grid">
+        <div class="meta">
+          <div class="label">Date</div>
+          <div class="value">{{ selectedReclamation?.date_reclamation | date: 'short' }}</div>
+        </div>
+
+        <div class="meta">
+          <div class="label">Nom & Prénom</div>
+          <div class="value">{{ selectedReclamation?.nom }} {{ selectedReclamation?.prenom }}</div>
+        </div>
+
+        <div class="meta">
+          <div class="label">Contact</div>
+          <div class="value">
+            <div>Tél : {{ selectedReclamation?.telephone }}</div>
+            <div class="muted">Email : {{ selectedReclamation?.email || '—' }}</div>
+          </div>
+        </div>
+
+        <div class="meta">
+          <div class="label">Type</div>
+          <div class="value">
+            <span class="chip"
+              [ngClass]="{
+                'chip--warning': selectedReclamation?.type_retour === 'Réclamation',
+                'chip--danger':  selectedReclamation?.type_retour === 'Problème technique',
+                'chip--info':    selectedReclamation?.type_retour === 'Feedback',
+                'chip--success': selectedReclamation?.type_retour === 'Suggestion d’amélioration'
+              }">
+              {{ selectedReclamation?.type_retour }}
+            </span>
+          </div>
+        </div>
+
+        <div class="meta">
+          <div class="label">Lieu</div>
+          <div class="value">{{ selectedReclamation?.lieu }}</div>
+        </div>
+
+        <div class="meta">
+          <div class="label">Date/Heure du problème</div>
+          <div class="value">
+            <div>Date : {{ selectedReclamation?.date_probleme || '—' }}</div>
+            <div>Heure : {{ selectedReclamation?.heure_probleme || '—' }}</div>
+          </div>
+        </div>
+
+        <div class="meta">
+          <div class="label">Usage</div>
+          <div class="value">{{ selectedReclamation?.usage_nano_box }}</div>
+        </div>
+
+        <div class="meta">
+          <div class="label">Retour souhaité</div>
+          <div class="value">{{ selectedReclamation?.souhaite_retour || '—' }}</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title">Description</div>
+        <div class="desc-box">
+          {{ selectedReclamation?.description }}
+        </div>
+      </div>
+
+      <div class="section" *ngIf="selectedReclamation?.photo_url">
+        <div class="section-title">Photo jointe</div>
+        <div class="photo-wrap">
+          <a class="open-link" [href]="photoFullUrl(selectedReclamation.photo_url)" target="_blank">Ouvrir en grand</a>
+          <img class="photo" [src]="photoFullUrl(selectedReclamation.photo_url)" alt="photo réclamation">
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-footer">
+      <button class="ghost-btn" (click)="closePopup()">Fermer</button>
+    </div>
+  </div>
+</div>
+

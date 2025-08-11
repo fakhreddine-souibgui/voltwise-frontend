@@ -1,0 +1,52 @@
+<div class="main-container">
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th>Reference</th>
+        <th>Espace Public</th>
+        <th>Secteur d'activité</th>
+        <th>Gouvernorat</th>
+        <th>Ville</th>
+        <th>Model</th>
+        <th>Date fabrication</th>
+        <th>Entretien</th>
+        <th>Fin location</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let station of stationsPaginees">
+        <td>{{ station.reference }}</td>
+        <td>{{ station.espacePublic }}</td>
+        <td>----------</td>
+        <td>----------</td>
+        <td>----------</td>
+        <td>----------</td>
+        <td>{{ station.fabrication }}</td>
+        <td>----------</td>
+        <td>----------</td>
+        <td>Loue</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="bottom-bar">
+    <button class="add-btn">Add Stations</button>
+
+    <div class="pagination-controls">
+      <span>Page</span>
+      <select [(ngModel)]="page">
+        <option *ngFor="let p of [].constructor(totalPages); let i = index" [value]="i+1">
+          {{ i+1 }}
+        </option>
+      </select>
+      <span>of {{ totalPages }}</span>
+
+      <button *ngFor="let p of [].constructor(totalPages); let i = index"
+              [class.active]="page === i+1"
+              (click)="page = i+1">
+        {{ i+1 }}
+      </button>
+    </div>
+  </div>
+</div>

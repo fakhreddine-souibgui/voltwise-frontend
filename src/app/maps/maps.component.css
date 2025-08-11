@@ -1,0 +1,11 @@
+.map-section {
+    padding: 20px;
+  }
+  
+  #map {
+    height: 400px;
+    width: 1200px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  

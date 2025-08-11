@@ -1,5 +1,5 @@
-import { Component ,AfterViewInit,Inject, PLATFORM_ID} from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component ,AfterViewInit,Inject, PLATFORM_ID,HostListener } from '@angular/core';
+import { RouterOutlet,Router  } from '@angular/router';
 import { PopfichetechComponent } from '../popfichetech/popfichetech.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { PopformulaireComponent } from '../popformulaire/popformulaire.component';
@@ -10,6 +10,10 @@ import { isPlatformBrowser } from '@angular/common';
 import 'leaflet/dist/leaflet.css';*/
 import { HttpClient } from '@angular/common/http';
 import { TranslateModule,TranslateService  } from '@ngx-translate/core';
+import { ChatbotComponent } from '../chatbot/chatbot.component';
+import { MapsComponent } from '../maps/maps.component';
+
+
 
 
 
@@ -18,13 +22,37 @@ import { TranslateModule,TranslateService  } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterOutlet,PopfichetechComponent,MatDialogModule,PopformulaireComponent,PopdemoComponent,TranslateModule,CommonModule],
+  imports: [RouterOutlet,PopfichetechComponent,MatDialogModule,PopformulaireComponent,PopdemoComponent,TranslateModule,CommonModule,ChatbotComponent,MapsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  isChatOpen = false;
+
+  // Écoute le scroll
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const chatIcon = document.getElementById('chat-icon');
+    if (window.scrollY > 200) {
+      chatIcon?.classList.remove('hidden');
+    } else {
+      chatIcon?.classList.add('hidden');
+    }
+  }
+  
+
+  // Toggle l’ouverture du chatbot
+  toggleChat() {
+    this.isChatOpen = !this.isChatOpen;
+    const chatBox = document.getElementById('chat-box');
+    if (this.isChatOpen) {
+      chatBox?.classList.remove('hidden');
+    } else {
+      chatBox?.classList.add('hidden');
+    }
+  }
   currentLang = 'fr';
-  constructor(private translate: TranslateService,@Inject(PLATFORM_ID) private platformId: Object, private dialog: MatDialog , private viewportScroller: ViewportScroller ,http: HttpClient)
+  constructor(private translate: TranslateService,@Inject(PLATFORM_ID) private platformId: Object, private dialog: MatDialog , private viewportScroller: ViewportScroller ,http: HttpClient,private router: Router)
    {
     if (isPlatformBrowser(this.platformId)) {
       // Seulement dans le navigateur !
@@ -130,4 +158,18 @@ products = [
        // panelClass: 'custom-dialog-container' // ✅ Ajoute une classe CSS personnalisée
       });
     }
+   
+    mobileMenuOpen = false;
+
+toggleMobileMenu() {
+  this.mobileMenuOpen = !this.mobileMenuOpen;
+}
+
+goauthenti() {
+  // Tu peux ajouter une vérification ici si tu veux
+  console.log('Navigation vers authentification');
+  this.router.navigate(['/authentification']);
+}
+
+
   }

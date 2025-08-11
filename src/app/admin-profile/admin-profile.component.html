@@ -1,0 +1,51 @@
+<div class="admin-profile">
+  <h2>Profil Admin</h2>
+<!--<img [src]="'http://localhost:3000/uploads/' + admin.image" alt="Admin Image" class="profile-img" *ngIf="admin.image && !editMode">-->
+<img *ngIf="admin && admin.image && !editMode" [src]="'http://localhost:3000/uploads/' + admin.image" alt="Admin Image" class="profile-img">
+
+
+
+  <form *ngIf="editMode" (ngSubmit)="saveChanges()" enctype="multipart/form-data">
+    <label>
+      Nom :
+      <input [(ngModel)]="admin.nom" name="nom" required />
+    </label>
+    <label>
+      Prénom :
+      <input [(ngModel)]="admin.prenom" name="prenom" required />
+    </label>
+    <label>
+      Email :
+      <input [(ngModel)]="admin.email" name="email" required />
+    </label>
+    <label>
+      Téléphone :
+      <input [(ngModel)]="admin.telephone" name="telephone" required />
+    </label>
+    <label>
+      Poste :
+      <input [(ngModel)]="admin.poste" name="poste" required />
+    </label>
+
+    <label>
+      Nouvelle image :
+      <input type="file" (change)="onImageSelected($event)" />
+    </label>
+
+    <button type="submit">Enregistrer</button>
+    <button type="button" (click)="editMode = false">Annuler</button>
+  </form>
+
+  <div *ngIf="admin">
+  <!--<img *ngIf="admin.image && !editMode" [src]="'http://localhost:3000/uploads/' + admin.image" alt="Admin Image" class="profile-img">-->
+  <p><strong>Nom :</strong> {{ admin.nom }}</p>
+  <p><strong>Prénom :</strong> {{ admin.prenom }}</p>
+  <p><strong>Email :</strong> {{ admin.email }}</p>
+  <p><strong>Téléphone :</strong> {{ admin.telephone }}</p>
+  <p><strong>Poste :</strong> {{ admin.poste }}</p>
+  <button (click)="editMode = true">Modifier</button>
+</div>
+
+</div>
+
+

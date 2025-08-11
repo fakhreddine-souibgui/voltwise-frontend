@@ -43,14 +43,28 @@
 <div class="background-effects">
   <div class="blur-effect ellipse-4"></div>
   <div class="blur-effect ellipse-3"></div>
-</div> 
+</div>
+<!-- Icône flottante du chatbot -->
+<!--<div id="chat-icon" (click)="toggleChat()" class="chat-float">
+  💬
+</div>-->
+  <app-chatbot></app-chatbot>
+
+<!-- Boîte de chat cachée au début -->
+<!--<div id="chat-box" class="chat-box hidden">
+  <app-chatbot></app-chatbot>
+</div> -->
 <!-- Navbar -->
 <header>
   <nav class="navbar">
     <div class="logo">
       <img src="assets/mes images/logo.png" alt="description">
     </div>
-    <div class="nav-right">
+    <!-- Icône burger visible en mobile -->
+    <div class="burger-icon" (click)="toggleMobileMenu()">
+      &#9776;
+    </div>
+    <div class="nav-right desktop-menu">
       <ul class="nav-list">
         <li><a (click)="onNavClick('hero')">{{ 'NAVBAR.HOME' | translate }}</a></li>
         <li><a (click)="onNavClick('about-container')">{{ 'NAVBAR.ABOUT' | translate }}</a></li>
@@ -62,10 +76,28 @@
         <button class="btnfr" (click)="switchLang('fr')">🇫🇷</button>
         <button class="btnfen" (click)="switchLang('en')">🇺🇸</button>
       </div>
-      <button class="nav-btn">{{ 'NAVBAR.LOGIN' | translate }}</button>
+      <button (click)="goauthenti()"class="nav-btn">{{ 'NAVBAR.LOGIN' | translate }}</button>
+    </div>
+     <!-- Menu MOBILE caché par défaut, affiché quand menu ouvert -->
+     <div class="mobile-menu" [class.open]="mobileMenuOpen">
+      <ul class="nav-list">
+        <li><a (click)="onNavClick('hero')">{{ 'NAVBAR.HOME' | translate }}</a></li>
+        <li><a (click)="onNavClick('about-container')">{{ 'NAVBAR.ABOUT' | translate }}</a></li>
+        <li><a (click)="onNavClick('recent-products')">{{ 'NAVBAR.SOLUTIONS' | translate }}</a></li>
+        <li><a (click)="onNavClick('faq-section')">{{ 'NAVBAR.FAQ' | translate }}</a></li>
+        <li><a (click)="onNavClick('contact')">{{ 'NAVBAR.CONTACT' | translate }}</a></li>
+      </ul>
+      <div class="language-switch">
+        <button class="btnfr" (click)="switchLang('fr')">🇫🇷</button>
+        <button class="btnfen" (click)="switchLang('en')">🇺🇸</button>
+      </div>
+      <button (click)="goauthenti()" class="nav-btn">{{ 'NAVBAR.LOGIN' | translate }}</button>
     </div>
   </nav>
 </header>
+
+
+
 
 <!-- Section Hero -->
 <section id="hero" class="hero">
@@ -81,7 +113,10 @@
     </div>
   </div>
   <div class="hero-image">
-    <img src="assets/mes images/battery.png" alt="discription">
+    <!--<img src="assets/mes images/videobattery.webm" alt="discription">-->
+    <video autoplay muted loop playsinline>
+      <source src="assets/mes images/videobattery.webm" type="video/webm">
+    </video>
   </div>
 </section>
 
@@ -499,6 +534,11 @@
       </div>
     </div>
   </section>
+<!--map-->
+
+  <section id="map-section"  class="map-section">
+        <app-maps></app-maps>
+      </section>
   
 <!--footer1-->
 <footer id="contact" class="footer">

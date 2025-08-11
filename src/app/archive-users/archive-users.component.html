@@ -1,0 +1,51 @@
+<div class="main-container">
+  <table class="custom-table">
+    <thead>
+      <tr>
+        <th><input type="checkbox"></th>
+        <th>Full name</th>
+        <th>Email</th>
+        <th>Phone 1</th>
+        <th>Phone 2</th>
+        <th>Society</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td><input type="checkbox"></td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone1 }}</td>
+        <td>{{ user.phone2 }}</td>
+        <td>{{ user.society }}</td>
+        <td>{{ user.role }}</td>
+        <td class="actions">
+          <button class="icon-btn edit" (click)="editUser(user)">
+            <img src="assets/mes images/edit.png" alt="Edit">
+          </button>
+          <button class="icon-btn delete" (click)="deleteUser(user)">
+            <img src="assets/mes images/remove.png" alt="Delete">
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination-controls">
+    <span>Page</span>
+    <select [(ngModel)]="page">
+      <option *ngFor="let p of [].constructor(totalPages); let i = index" [value]="i+1">{{ i+1 }}</option>
+    </select>
+    <span>of {{ totalPages }}</span>
+
+    <button [disabled]="page === 1" (click)="page = page - 1">&lt;</button>
+    <button *ngFor="let p of [1, 2, 3]"
+            [class.active]="page === p"
+            (click)="page = p">{{ p }}</button>
+    <span>...</span>
+    <button (click)="page = totalPages"
+            [class.active]="page === totalPages">{{ totalPages }}</button>
+  </div>
+</div>

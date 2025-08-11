@@ -1,0 +1,19 @@
+<h2>Créer un compte administrateur</h2>
+
+<form (ngSubmit)="onRegister()" #registerForm="ngForm" enctype="multipart/form-data">
+  <input type="text" name="nom" [(ngModel)]="admin.nom" placeholder="Nom" required>
+  <input type="text" name="prenom" [(ngModel)]="admin.prenom" placeholder="Prénom" required>
+  <input type="tel" name="telephone" [(ngModel)]="admin.telephone" placeholder="Numéro de téléphone" required pattern="^[0-9]{8,15}$">
+  <input type="email" name="email" [(ngModel)]="admin.email" placeholder="Email" required>
+  <input type="text" name="poste" [(ngModel)]="admin.poste" placeholder="Poste dans l'entreprise" required>
+  
+  <!-- Upload de l'image -->
+  <input type="file" (change)="onFileSelected($event)" accept="image/*" required>
+
+  <input type="password" name="password" [(ngModel)]="admin.password" placeholder="Mot de passe" required>
+  <input type="password" name="confirmPassword" [(ngModel)]="admin.confirmPassword" placeholder="Confirmer le mot de passe" required>
+
+  <button type="submit" [disabled]="!registerForm.valid">S’inscrire</button>
+</form>
+
+<p *ngIf="errorMessage" style="color:red">{{ errorMessage }}</p>

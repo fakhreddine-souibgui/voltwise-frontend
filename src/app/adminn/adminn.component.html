@@ -1,0 +1,101 @@
+<div class="dashboard-container">
+    <aside class="sidebar">
+        <div class="logo">
+            <img src="assets/mes images/logo.png" alt="Voltwise Solutions">
+          <!--  <span>Voltwise Solutions</span>-->
+          </div>   
+             <ul>
+                <li [class.active]="currentSection === 'dashboard'" (click)="setSection('dashboard')"> <img src="assets/mes images/ad1.png" alt="Dashboard Icon" > Dashboard</li>
+                <li [class.active]="currentSection === 'users'" (click)="setSection('users')"><img src="assets/mes images/ad2.png" alt="Dashboard Icon" >Gestion Users</li>
+                <li [class.active]="currentSection === 'demandes'" (click)="setSection('demandes')"><img src="assets/mes images/ad3.png" alt="Dashboard Icon" >Gestion Demandes</li>
+                <li [class.active]="currentSection === 'espaces'" (click)="setSection('espaces')"><img src="assets/mes images/ad4.png" alt="Dashboard Icon" >Gestion Espaces Publics</li>
+        <li [class.active]="currentSection === 'stations'" (click)="setSection('stations')"><img src="assets/mes images/ad5.png" alt="Dashboard Icon" >Gestion Des stations</li>
+        <li [class.active]="currentSection === 'casiers'" (click)="setSection('casiers')"><img src="assets/mes images/ad6.png" alt="Dashboard Icon" >Gestion des Casiers</li>
+        <li [class.active]="currentSection === 'reclamations'" (click)="setSection('reclamations')"><img src="assets/mes images/ad7.png" alt="Dashboard Icon" >Gestion Réclamations</li>
+        <li [class.active]="currentSection === 'publicites'" (click)="setSection('publicites')"><img src="assets/mes images/ad8.png" alt="Dashboard Icon" >Demandes Publicités</li>
+        <li [class.active]="currentSection === 'commentaire'" (click)="setSection('commentaire')"><img src="assets/mes images/ad9.png" alt="Dashboard Icon" >Gestion Des Commentaires</li>
+        <li [class.active]="currentSection === 'archive'" (click)="setSection('archive')"><img src="assets/mes images/ad10.png" alt="Dashboard Icon" >Archive Users</li>
+        <li [class.active]="currentSection === 'corbeille'" (click)="setSection('corbeille')"><img src="assets/mes images/ad11.png" alt="Dashboard Icon" >Corbeille</li>
+        <li [class.active]="currentSection === 'chatbot'" (click)="setSection('chatbot')"><img src="assets/mes images/chatbotiavolt.jpg" alt="Chatbot Icon">Gérer FAQ Chatbot</li>
+      </ul>
+    </aside>
+  
+    <main class="main-content">
+      <header class="header">
+        <input type="text" placeholder="Search" class="search-input" />
+        <div class="profile-pic" (click)="toggleProfileMenu()">
+      <!--<img [src]="'http://localhost:3000/uploads/' + admin.image" alt="Admin Image">-->
+      <img [src]="'http://localhost:3000/uploads/' + admin.image" 
+     alt="Admin Image"
+     (error)="onImageError($event)">
+    </div>
+    <div class="profile-menu" *ngIf="showProfileMenu">
+    <p><strong>{{ admin.nom }} {{ admin.prenom }}</strong></p>
+    <p>{{ admin.email }}</p>
+    <div class="profile-buttons">
+    <button class="profile-btn" (click)="goToProfile()">Profil</button>
+    <button class="logout-btn" (click)="logout()">Déconnecter</button>
+  </div>
+  </div>
+      </header>
+      <div *ngIf="currentSection === 'dashboard'">
+
+      <section class="charts-section">
+        <div class="chart-container">
+          <h3>Espace Public par gouvernorat:</h3>
+          <!--<app-chart></app-chart>-->
+        </div>
+        <div class="chart-container">
+          <h3>Stations par gouvernorat:</h3>
+          <!--<app-chart></app-chart>-->
+        </div>
+      </section>
+  
+      <section class="map-section">
+        <app-maps></app-maps>
+      </section>
+      </div>
+
+      <div *ngIf="currentSection === 'users'">
+          <app-admin-users-list ></app-admin-users-list>
+          
+                </div>
+
+      <div *ngIf="currentSection === 'demandes'">
+            <app-gestion-demandes></app-gestion-demandes>
+
+                </div>
+      <div *ngIf="currentSection === 'espaces'">
+        <app-espace-public></app-espace-public>
+      </div>
+       <div *ngIf="currentSection === 'stations'">
+        <app-gestion-station></app-gestion-station>
+      </div>
+       <div *ngIf="currentSection === 'casiers'">
+        <app-gestion-casiers></app-gestion-casiers>
+      </div>
+      <div *ngIf="currentSection === 'reclamations'">
+        <app-gestion-reclamations></app-gestion-reclamations>
+      </div>
+
+      <div *ngIf="currentSection === 'publicites'">
+        <app-demandes-publicites></app-demandes-publicites>
+      </div>
+      <div *ngIf="currentSection === 'commentaire'">
+        <app-gestion-commentaires></app-gestion-commentaires>
+      </div>
+       <div *ngIf="currentSection === 'archive'">
+        <app-archive-users></app-archive-users>
+      </div>
+       <div *ngIf="currentSection === 'corbeille'">
+        <app-corbeille></app-corbeille>
+      </div>
+<div *ngIf="currentSection === 'chatbot'">
+  <app-chatbot-faq></app-chatbot-faq>
+</div>
+
+
+
+    </main>
+  </div>
+  

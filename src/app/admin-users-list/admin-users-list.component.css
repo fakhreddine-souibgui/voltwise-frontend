@@ -1,0 +1,112 @@
+.users-container {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  thead {
+    background: #d1f5f0;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .edit-btn i {
+    color: blue;
+  }
+  
+  .delete-btn i {
+    color: red;
+  }
+  
+  .add-admin {
+    margin-top: 15px;
+    background-color: #2dd4bf;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .page-buttons button {
+    margin: 0 2px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #eee;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .page-buttons button.active {
+    background-color: #2dd4bf;
+    color: white;
+  }
+  /*popup*/
+  .popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.popup-content h2 {
+  margin-bottom: 20px;
+}
+
+.popup-content label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.popup-content input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+.popup-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}

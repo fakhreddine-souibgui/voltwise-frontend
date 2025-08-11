@@ -1,0 +1,62 @@
+<!--
+<webcam 
+  [trigger]="triggerObservable"
+  (imageCapture)="handleAndVerify($event)"
+  [videoOptions]="videoOptions"
+  [mirrorImage]="'always'">
+</webcam>
+
+<div style="margin-top: 15px; text-align: center;">
+  <button (click)="captureAndVerify()" [disabled]="isLoading">
+    🔍 Vérifier mon visage
+  </button>
+</div>
+
+<div *ngIf="isLoading" style="text-align: center; margin-top: 10px;">
+  <div class="spinner"></div>
+  <p>Vérification en cours...</p>
+</div>
+
+
+<p *ngIf="verificationResult === true" class="result" style="color: green;">
+  ✅ Visage reconnu
+</p>
+<p *ngIf="verificationResult === false" class="result" style="color: red;">
+  ❌ Visage non reconnu
+</p>
+
+
+<img *ngIf="webcamImage" [src]="webcamImage.imageAsDataUrl" class="preview" alt="Aperçu capture" />-->
+<div class="verification-container">
+  <div class="webcam-wrapper">
+    <webcam 
+      [trigger]="triggerObservable"
+      (imageCapture)="handleAndVerify($event)"
+      [videoOptions]="videoOptions"
+      [mirrorImage]="'always'">
+    </webcam>
+
+  </div>
+ 
+  <div class="controls">
+    <button class="verify-button" (click)="captureAndVerify()" [disabled]="isLoading">
+      🔍 Vérifier mon visage
+    </button>
+  </div>
+
+  <div *ngIf="isLoading" class="loading">
+    <div class="spinner"></div>
+    <p>Vérification en cours...</p>
+  </div>
+
+  <p *ngIf="verificationResult === true" class="result success">
+    ✅ Visage reconnu
+  </p>
+  <p *ngIf="verificationResult === false" class="result error">
+    ❌ Visage non reconnu
+  </p>
+
+  <img *ngIf="webcamImage" [src]="webcamImage.imageAsDataUrl" class="preview" alt="Aperçu capture" />
+</div>
+
+

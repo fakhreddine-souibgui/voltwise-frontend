@@ -1,0 +1,108 @@
+<!--
+<div class="chat-container">
+    <p><strong>Voltwise Solutions Chat</strong> </p>
+  <div class="chat-history">
+    <div *ngIf="userMessage" class="user-message">
+      {{ userMessage }}
+    </div>
+    <div *ngIf="responseLines.length" class="bot-message">
+      <img src="assets/mes_images/logo.png" alt="Voltwise" class="bot-avatar" />
+      <ng-container *ngFor="let line of responseLines">
+        <div>{{ line }}</div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="message-input">
+    <input [(ngModel)]="userMessage" placeholder="Pose ta question...">
+    <button (click)="sendMessage()">Envoyer</button>
+  </div>
+</div>
+-->
+<!-- src/app/components/chatbot/chatbot.component.html -->
+<!--<div class="chatbot-container" [class.open]="isOpen">
+  <button class="chatbot-toggle" (click)="toggleChat()">
+    💬
+  </button>
+
+  <div class="chatbot-window" *ngIf="isOpen">
+    <div class="chatbot-header">
+      <h4>Assistant Voltwise</h4>
+      <button (click)="toggleChat()">✖</button>
+    </div>
+
+    <div class="chatbot-messages">
+      <div *ngFor="let msg of chatHistory" [ngClass]="msg.from">
+        <span>{{ msg.text }}</span>
+      </div>
+      <div *ngIf="loading" class="loading">...</div>
+    </div>
+
+    <form (submit)="sendMessage(); $event.preventDefault()">
+      <input type="text" [(ngModel)]="userMessage" name="userMessage" placeholder="Pose ta question..." autocomplete="off" />
+      <button type="submit" [disabled]="loading">Envoyer</button>
+    </form>
+  </div>
+</div>-->
+<button class="chatbot-icon" (click)="toggleChat()">
+  💬
+</button>
+
+<div class="chat-popup" *ngIf="showChat">
+  <div class="chat-header">
+    <h3>Chatbot Voltwise</h3>
+    <button class="close-btn" (click)="toggleChat()">✖</button>
+  </div>
+
+  <form (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <label for="message">Message :</label>
+    <input
+      type="text"
+      id="message"
+      [(ngModel)]="message"
+      name="message"
+      required
+      placeholder="Tapez votre message ici..."
+    />
+
+    <label class="custom-file-upload" for="image">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="20"
+        viewBox="0 0 24 24"
+        width="20"
+        fill="#007bff"
+        style="vertical-align: middle; margin-right: 6px;"
+      >
+        <path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.34v6h6.66v-6h3.34L12 2z" />
+      </svg>
+      Choisir une image
+    </label>
+    <input
+      type="file"
+      id="image"
+      (change)="onFileSelected($event)"
+      accept="image/*"
+      hidden
+    />
+
+    <div class="image-preview" *ngIf="selectedFile">
+      <img [src]="imagePreview" alt="Prévisualisation image" />
+      <button type="button" class="remove-btn" (click)="removeImage()">
+        ✖
+      </button>
+    </div>
+
+<button type="submit" [disabled]="loading" *ngIf="!loading">Envoyer</button>
+
+<div *ngIf="loading" class="spinner"></div>
+  </form>
+
+  <div *ngIf="response" class="response-box">
+    <h4>Réponse :</h4>
+    <pre>{{ response }}</pre>
+  </div>
+</div>
+
+
+

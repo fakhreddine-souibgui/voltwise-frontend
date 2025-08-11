@@ -1,0 +1,81 @@
+<div class="users-container">
+  <table>
+    <thead>
+      <tr>
+        <th><input type="checkbox" /></th>
+        <th>Full name</th>
+        <th>Email</th>
+        <th>Phone 1</th>
+        <th>Phone 2</th>
+        <th>Society</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of paginatedUsers">
+  <td><input type="checkbox" /></td>
+  <td>{{ user.fullName }}</td>
+  <td>{{ user.email }}</td>
+  <td>{{ user.phone }}</td>         <!-- phone1 -->
+  <td>xxxxx</td>                    <!-- phone2 -->
+  <td>{{ user.companyName }}</td>  <!-- society -->
+  <td>{{ user.job }}</td>          <!-- role -->
+  <td class="actions">
+    <button class="edit-btn" (click)="openEditPopup(user)">
+      <img src="assets/mes images/edit.png" alt="Edit Icon" />
+    </button>
+    
+    <button class="delete-btn" (click)="deleteUser(user.id)">
+      <img src="assets/mes images/remove.png" alt="Delete Icon" />
+    </button>
+  </td>
+</tr>
+<!-- ✅ POPUP de modification -->
+<div class="popup-overlay" *ngIf="showEditPopup">
+  <div class="popup-content">
+    <h2>Modifier l'utilisateur</h2>
+
+    <label>Nom complet</label>
+    <input [(ngModel)]="selectedUser.fullName" />
+
+    <label>Email</label>
+    <input [(ngModel)]="selectedUser.email" />
+
+    <label>Téléphone</label>
+    <input [(ngModel)]="selectedUser.phone" />
+
+    <label>Société</label>
+    <input [(ngModel)]="selectedUser.companyName" />
+
+    <label>Poste</label>
+    <input [(ngModel)]="selectedUser.job" />
+
+    <div class="popup-actions">
+      <button (click)="saveUserChanges()">Enregistrer</button>
+      <button (click)="closeEditPopup()">Annuler</button>
+    </div>
+  </div>
+</div>
+
+    </tbody>
+  </table>
+
+  <button class="add-admin">Add Admin</button>
+
+  <div class="pagination">
+    <span>Page</span>
+    <select [(ngModel)]="currentPage">
+      <option *ngFor="let p of [].constructor(totalPages); let i = index" [value]="i+1">{{ i + 1 }}</option>
+    </select>
+    <span>of {{ totalPages }}</span>
+
+    <div class="page-buttons">
+      <button *ngFor="let p of [].constructor(totalPages); let i = index"
+              [class.active]="currentPage === i+1"
+              (click)="goToPage(i+1)">
+        {{ i + 1 }}
+      </button>
+    </div>
+  </div>
+</div>
